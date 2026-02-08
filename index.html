@@ -469,6 +469,112 @@ section { padding: 80px 0; }
     font-size: 0.85rem;
 }
 
+/* ============ SETUP SECTION ============ */
+.sec-setup {
+    background: var(--white);
+    border-bottom: var(--border);
+}
+.setup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+.tool-card {
+    background: var(--bg);
+    border: var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 100ms ease, box-shadow 100ms ease;
+}
+.tool-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-lg);
+}
+.tool-card.tool-main {
+    border-width: 4px;
+    background: var(--white);
+}
+.tool-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.tool-badge-main {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    background: var(--green);
+    color: var(--white);
+    border: 2px solid var(--black);
+}
+.tool-price {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--green-dark);
+}
+.tool-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+.tool-link {
+    display: block;
+    text-align: center;
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+    background: var(--black);
+    transition: transform 100ms ease, box-shadow 100ms ease;
+    margin-top: auto;
+}
+.tool-link:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+.tool-link:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+.setup-notes {
+    background: var(--bg);
+    border: var(--border);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.setup-note {
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+.setup-note strong {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+.note-warn { color: var(--red); }
+.note-info { color: var(--text-muted); }
+@media (max-width: 768px) {
+    .setup-grid { grid-template-columns: 1fr; }
+}
+
 /* ============ FOOTER ============ */
 .footer {
     background: var(--black);
@@ -524,6 +630,7 @@ section { padding: 80px 0; }
     <div class="container header-inner">
         <a href="#" class="logo">Terra × AI</a>
         <nav class="nav-links">
+            <a href="#setup" class="nav-link" data-section="setup">Setup</a>
             <a href="#kontekst" class="nav-link" data-section="kontekst">Kontekst</a>
             <a href="#pipeline" class="nav-link" data-section="pipeline">Pipeline</a>
             <a href="#asystent" class="nav-link" data-section="asystent">Asystent</a>
@@ -540,6 +647,44 @@ section { padding: 80px 0; }
         <h1>TERRA RECYCLING <span>× AI</span></h1>
         <p class="hero-sub">Greenwashing Audit Toolkit — wszystkie prompty w jednym miejscu</p>
         <p class="hero-meta">Skopiuj · Wklej do Gemini / ChatGPT · Działaj</p>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: SETUP
+     ======================================== -->
+<section id="setup" class="sec-setup">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--black); color: var(--white);">Krok 0</div>
+            <h2>Narzędzia AI</h2>
+            <p>Załóż konta na 3 platformach. Wszystkie darmowe.</p>
+        </div>
+        <div class="setup-grid">
+            <div class="tool-card tool-main anim">
+                <div class="tool-name">Gemini <span class="tool-badge-main">Główne</span></div>
+                <div class="tool-price">DARMOWE</div>
+                <p class="tool-desc">Tutaj budujecie Asystenta Greenwashingu. Gems, upload plików, Deep Research (5/mies.) — wszystko w free.</p>
+                <a href="https://gemini.google.com" target="_blank" rel="noopener" class="tool-link">Załóż konto</a>
+            </div>
+            <div class="tool-card anim anim-delay-1">
+                <div class="tool-name">ChatGPT</div>
+                <div class="tool-price">DARMOWE</div>
+                <p class="tool-desc">Do Deep Research (5 raportów/mies.). Pracuje w tle 15-30 min i wraca z raportem.</p>
+                <a href="https://chatgpt.com" target="_blank" rel="noopener" class="tool-link">Załóż konto</a>
+            </div>
+            <div class="tool-card anim anim-delay-2">
+                <div class="tool-name">DeepSeek</div>
+                <div class="tool-price">DARMOWE</div>
+                <p class="tool-desc">Do rozgrzewki i porównań. Najszybsze zakładanie konta. Nie wklejajcie tu danych firmy.</p>
+                <a href="https://chat.deepseek.com" target="_blank" rel="noopener" class="tool-link">Załóż konto</a>
+            </div>
+        </div>
+        <div class="setup-notes anim anim-delay-3">
+            <p class="setup-note"><strong class="note-info">Gemini — prywatność:</strong> Ustawienia &rarr; Gemini Apps Activity &rarr; wyłącz. Nawet po wyłączeniu Google trzyma czaty 72h, potem kasuje.</p>
+            <p class="setup-note"><strong class="note-info">ChatGPT — prywatność:</strong> Settings &rarr; Data Controls &rarr; "Improve the model for everyone" &rarr; wyłącz. Domyślnie jest włączone! Potrzebna weryfikacja SMS przy rejestracji.</p>
+            <p class="setup-note"><strong class="note-warn">DeepSeek — UWAGA:</strong> Serwery w Chinach. Brak RODO. Używamy do ogólnych pytań i porównań — NIGDY nie wklejajcie tu danych firmy, materiałów handlowych ani niczego poufnego.</p>
+        </div>
     </div>
 </section>
 
