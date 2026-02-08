@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERRA RECYCLING × AI — Materiały Szkoleniowe</title>
+    <meta name="description" content="Prompty i materiały do szkolenia Greenwashing + AI. Terra Recycling, 09-10.02.2026.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%2322C55E' width='100' height='100' stroke='%23000' stroke-width='8'/><text y='72' x='18' font-size='60' font-weight='900' fill='%23000'>TR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+/* ============================================
+   NEUBRUTALIST DESIGN SYSTEM — TERRA RECYCLING
+   ============================================ */
+:root {
+    --bg: #FFFEF0;
+    --bg-alt: #f5f0e5;
+    --white: #ffffff;
+    --black: #000000;
+    --text: #000000;
+    --text-muted: #4a4a4a;
+    --green: #22C55E;
+    --green-dark: #16A34A;
+    --yellow: #FEF08A;
+    --lime: #A3E635;
+    --pink: #EC4899;
+    --blue: #3B82F6;
+    --red: #EF4444;
+    --orange: #F97316;
+    --font-body: 'Space Grotesk', -apple-system, sans-serif;
+    --font-mono: 'Space Mono', monospace;
+    --shadow-sm: 3px 3px 0px 0px #000;
+    --shadow-md: 5px 5px 0px 0px #000;
+    --shadow-lg: 8px 8px 0px 0px #000;
+    --shadow-xl: 12px 12px 0px 0px #000;
+    --border: 3px solid #000;
+    --border-thick: 4px solid #000;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ============ ACCESSIBILITY ============ */
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+}
+
+/* ============ LAYOUT ============ */
+.container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+section { padding: 80px 0; }
+
+/* ============ HEADER ============ */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: var(--border);
+    padding: 12px 0;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo {
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text);
+}
+.nav-links {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+.nav-link {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text);
+    border: 2px solid transparent;
+    transition: all 100ms ease;
+}
+.nav-link:hover, .nav-link.active {
+    background: var(--yellow);
+    border-color: var(--black);
+}
+
+/* ============ HERO ============ */
+.hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle, #00000008 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+}
+.hero-badge {
+    display: inline-block;
+    background: var(--green);
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: slideUp 0.5s ease 0.1s forwards;
+}
+.hero h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: slideUp 0.6s ease 0.2s forwards;
+}
+.hero h1 span {
+    display: inline-block;
+    background: var(--yellow);
+    padding: 0 8px;
+    border: 2px solid var(--black);
+}
+.hero-sub {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: slideUp 0.6s ease 0.3s forwards;
+}
+.hero-meta {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    opacity: 0;
+    animation: slideUp 0.6s ease 0.4s forwards;
+}
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: slideUp 0.6s ease 0.5s forwards;
+}
+.stat-box {
+    background: var(--white);
+    border: var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 140px;
+    transition: transform 100ms ease, box-shadow 100ms ease;
+}
+.stat-box:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-lg);
+}
+.stat-num {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    line-height: 1;
+}
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* ============ SECTION HEADERS ============ */
+.section-head {
+    margin-bottom: 48px;
+}
+.section-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border: var(--border);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 16px;
+}
+.section-head h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+.section-head p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+/* ============ SECTIONS COLORS ============ */
+.sec-kontekst { background: var(--bg); }
+.sec-pipeline {
+    background: var(--yellow);
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+.sec-asystent { background: var(--bg); }
+.sec-dzien2 {
+    background: var(--pink);
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+.sec-dzien2 .section-head h2,
+.sec-dzien2 .section-head p { color: var(--white); }
+.sec-bonus {
+    background: var(--lime);
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+
+/* ============ PROMPT CARDS ============ */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.cards-grid-full {
+    grid-template-columns: 1fr;
+}
+.cards-grid > .prompt-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 12px);
+    justify-self: center;
+}
+
+.prompt-card {
+    background: var(--white);
+    border: var(--border);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    transition: transform 100ms ease, box-shadow 100ms ease;
+}
+.prompt-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-bottom: var(--border);
+    color: var(--white);
+}
+.card-header.green { background: var(--green); }
+.card-header.yellow { background: var(--orange); }
+.card-header.pink { background: var(--pink); }
+.card-header.lime { background: var(--green-dark); }
+.card-num {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1;
+}
+.card-title {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.card-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    padding: 12px 20px 0;
+}
+
+.card-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 12px 20px;
+}
+.badge {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border: 2px solid var(--black);
+}
+.badge-tool { background: var(--yellow); }
+.badge-time { background: var(--bg); }
+.badge-target { background: var(--lime); }
+
+/* ============ PROMPT CONTENT BLOCK ============ */
+.prompt-block {
+    margin: 0 20px;
+    background: #1a1a1a;
+    border: 2px solid var(--black);
+    position: relative;
+    overflow: hidden;
+}
+.prompt-text {
+    padding: 16px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: #e8e8e8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 240px;
+    overflow-y: auto;
+    transition: max-height 0.4s ease;
+}
+.prompt-text::-webkit-scrollbar { width: 6px; }
+.prompt-text::-webkit-scrollbar-track { background: transparent; }
+.prompt-text::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
+.prompt-text::-webkit-scrollbar-thumb:hover { background: #777; }
+.prompt-block.expanded .prompt-text {
+    max-height: 5000px;
+}
+.prompt-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(transparent, #1a1a1a);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.prompt-block.expanded .prompt-fade {
+    opacity: 0;
+}
+
+/* ============ CARD ACTIONS ============ */
+.card-actions {
+    display: flex;
+    gap: 8px;
+    padding: 16px 20px;
+    margin-top: auto;
+}
+.btn-copy, .btn-expand {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: var(--border);
+    cursor: pointer;
+    transition: transform 100ms ease, box-shadow 100ms ease, background 100ms ease;
+    text-align: center;
+}
+.btn-copy {
+    background: var(--lime);
+    color: var(--black);
+    box-shadow: var(--shadow-sm);
+}
+.btn-copy:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+.btn-copy:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+.btn-copy.copied {
+    background: var(--green);
+    color: var(--white);
+}
+.btn-expand {
+    background: var(--bg);
+    color: var(--text);
+    box-shadow: var(--shadow-sm);
+    flex: 0 0 auto;
+    padding: 12px 20px;
+}
+.btn-expand:hover {
+    background: var(--yellow);
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============ TOAST ============ */
+.toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--black);
+    color: var(--lime);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: 3px solid var(--lime);
+    box-shadow: var(--shadow-lg);
+    z-index: 9999;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+}
+.toast.visible {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ============ COPY COUNTER ============ */
+.copy-counter {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: var(--white);
+    border: var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 12px 16px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.copy-counter.visible { opacity: 1; }
+.counter-num {
+    background: var(--green);
+    color: var(--white);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+}
+
+/* ============ FOOTER ============ */
+.footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 32px 0;
+    text-align: center;
+    border-top: var(--border);
+}
+.footer p {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+}
+.footer strong { color: var(--yellow); }
+
+/* ============ ANIMATIONS ============ */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.anim {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.anim.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.anim-delay-1 { transition-delay: 0.1s; }
+.anim-delay-2 { transition-delay: 0.2s; }
+.anim-delay-3 { transition-delay: 0.3s; }
+.anim-delay-4 { transition-delay: 0.4s; }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    section { padding: 56px 0; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .cards-grid > .prompt-card:last-child:nth-child(odd) { max-width: 100%; }
+    .hero-stats { gap: 8px; }
+    .stat-box { min-width: 100px; padding: 12px 16px; }
+    .stat-num { font-size: 1.5rem; }
+    .nav-links { display: none; }
+    .card-actions { flex-direction: column; }
+    .copy-counter { bottom: 16px; right: 16px; }
+}
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container header-inner">
+        <a href="#" class="logo">Terra × AI</a>
+        <nav class="nav-links">
+            <a href="#kontekst" class="nav-link" data-section="kontekst">Kontekst</a>
+            <a href="#pipeline" class="nav-link" data-section="pipeline">Pipeline</a>
+            <a href="#asystent" class="nav-link" data-section="asystent">Asystent</a>
+            <a href="#dzien2" class="nav-link" data-section="dzien2">Dzień 2</a>
+            <a href="#bonus" class="nav-link" data-section="bonus">Bonus</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge">Szkolenie 09-10.02.2026</div>
+        <h1>TERRA RECYCLING <span>× AI</span></h1>
+        <p class="hero-sub">Greenwashing Audit Toolkit — wszystkie prompty w jednym miejscu</p>
+        <p class="hero-meta">Skopiuj · Wklej do Gemini / ChatGPT · Działaj</p>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: KONTEKST (W1)
+     ======================================== -->
+<section id="kontekst" class="sec-kontekst">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--green); color: var(--white);">Dzień 1 · Warsztat #1</div>
+            <h2>Budowanie kontekstu</h2>
+            <p>Opowiedz AI o swojej firmie — zbuduj fundament do audytu.</p>
+        </div>
+        <div class="cards-grid" id="kontekst-cards">
+            <!-- Cards injected by JS -->
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: PIPELINE (W3)
+     ======================================== -->
+<section id="pipeline" class="sec-pipeline">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--orange); color: var(--white);">Dzień 1 · Warsztat #3</div>
+            <h2>Pipeline Audytu</h2>
+            <p>Znajdź, oceń, sprawdź, przepisz — 4 kroki do uczciwej komunikacji.</p>
+        </div>
+        <div class="cards-grid" id="pipeline-cards">
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: GEM (W4)
+     ======================================== -->
+<section id="asystent" class="sec-asystent">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--blue); color: var(--white);">Dzień 1 · Warsztat #4</div>
+            <h2>Asystent Greenwashingu</h2>
+            <p>Wklej instrukcje do Gemini — masz asystenta z 7 narzędziami.</p>
+        </div>
+        <div class="cards-grid cards-grid-full" id="asystent-cards">
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: DZIEŃ 2 (W5-W7)
+     ======================================== -->
+<section id="dzien2" class="sec-dzien2">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--white); color: var(--black);">Dzień 2 · Warsztaty #5-#7</div>
+            <h2>Dzień 2 — Kryzys i Symulacja</h2>
+            <p>Gazeta pisze o Twojej firmie. Ćwiczysz reakcję — z AI jako wsparciem.</p>
+        </div>
+        <div class="cards-grid" id="dzien2-cards">
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: BONUS
+     ======================================== -->
+<section id="bonus" class="sec-bonus">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--black); color: var(--lime);">Bonus Tracks</div>
+            <h2>Dodatkowe zadania</h2>
+            <p>Chcesz więcej? Wybierz jedno z zadań i idź o krok dalej.</p>
+        </div>
+        <div class="cards-grid" id="bonus-cards">
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>Szkolenie <strong>200bar studio</strong> × <strong>Nowe Możliwości</strong> · 09-10.02.2026</p>
+        <p style="margin-top: 8px;">Pytania? <a href="mailto:kontakt@200bar.studio" style="color: var(--lime); text-decoration: underline;">kontakt@200bar.studio</a></p>
+    </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">SKOPIOWANO DO SCHOWKA</div>
+
+<!-- COPY COUNTER -->
+<div class="copy-counter" id="copy-counter">
+    <div class="counter-num" id="counter-num">0</div>
+    <span>Skopiowanych</span>
+</div>
+
+<!-- ========================================
+     PROMPT DATA + JAVASCRIPT
+     ======================================== -->
+<script>
+// ============ PROMPT DATA ============
+const PROMPTS = [
+// --- KONTEKST ---
+{
+    id: 'firma', section: 'kontekst', number: '01', color: 'green',
+    title: 'Profil Firmy',
+    desc: 'Opowiedz o firmie — AI zbuduje profil do audytu greenwashingu.',
+    badges: [
+        { text: 'Gemini Chat', cls: 'badge-tool' },
+    ],
+    content: `# PROMPT 1: FIRMA
+
+#### (Chat — Gemini)
+
+---
+
+## KONTEKST I CEL
+
+Przeprowadzisz wywiad o firmie uczestnika. Celem jest zbudowanie profilu firmy, który AI będzie używać do audytu greenwashingu.
+
+Wynik tego wywiadu to plik firma.md — pierwszy z trzech plików kontekstowych ("paszport greenwashingowy").
+
+## METODOLOGIA
+
+- Zadawaj pytania PO JEDNYM. Czekaj na odpowiedź.
+- Nie komentuj odpowiedzi — przejdź do następnego pytania.
+- Jeśli odpowiedź jest zbyt ogólna, dopytaj RAZ: "Możesz podać konkretny przykład?"
+- Jeśli uczestnik odpowiada "nie wiem" — zanotuj to i idź dalej. Nie naciskaj.
+- Po wszystkich odpowiedziach wygeneruj plik firma.md.
+
+---
+
+## PYTANIA
+
+### CZĘŚĆ 1: KIM JESTEŚCIE (5 pytań)
+
+1. Czym zajmuje się Twoja firma? Branża, główne usługi lub produkty?
+2. Jaka jest skala działania? (lokalna/krajowa/międzynarodowa, ile osób zatrudnia, ile lokalizacji?)
+3. Kim są wasi klienci? B2B, B2C, a może oba? Z jakich branż? Czego od was oczekują?
+4. Jakie certyfikaty, normy lub pozwolenia posiadacie? (ISO, środowiskowe, branżowe — wymień wszystkie jakie znasz)
+5. Kto w firmie odpowiada za komunikację zewnętrzną? (marketing, handlowcy, zarząd, a może każdy sam?)
+
+_(Czekaj na odpowiedzi, potem przejdź do części 2)_
+
+### CZĘŚĆ 2: EKOLOGIA — FAKTY (5 pytań)
+
+6. Co firma FAKTYCZNIE robi dla środowiska? (konkretne działania, procesy, inwestycje — nie hasła)
+7. Jakie macie dane liczbowe dot. ekologii? (tony przetworzonych odpadów, % recyclingu, oszczędność energii, emisje — cokolwiek co mierzycie)
+8. Jakie cele ekologiczne firma sobie postawiła? (jeśli są — na kiedy, jakie wskaźniki?)
+9. Czy firma publikuje raport środowiskowy, ESG lub inny dokument o wpływie na środowisko?
+10. Jakie są główne surowce lub materiały z którymi pracujecie? Co się z nimi dzieje na końcu procesu?
+
+_(Czekaj na odpowiedzi, potem przejdź do części 3)_
+
+### CZĘŚĆ 3: OTOCZENIE I RYZYKA (4 pytania)
+
+11. Jakie regulacje środowiskowe was dotyczą? (rozporządzenia, dyrektywy UE, wymogi raportowania — jeśli wiesz)
+12. Czy wasza branża jest narażona na zarzuty greenwashingu? Dlaczego tak lub dlaczego nie?
+13. Jakie są największe wyzwania środowiskowe w waszej branży? (np. ślad węglowy, odpady, zużycie wody)
+14. Czy obserwujecie, jak komunikuje się wasza konkurencja pod kątem ekologii? Co robią inaczej?
+
+---
+
+## FORMAT WYNIKU
+
+Po zebraniu odpowiedzi wygeneruj plik firma.md z sekcjami:
+- DANE PODSTAWOWE
+- CERTYFIKATY I NORMY
+- EKOLOGIA — CO FIRMA FAKTYCZNIE ROBI
+- SUROWCE I PROCESY
+- RAPORTOWANIE
+- REGULACJE
+- OTOCZENIE BRANŻOWE
+- RYZYKA GREENWASHINGOWE (top 3)
+- INSTRUKCJE DLA AI`
+},
+{
+    id: 'rola', section: 'kontekst', number: '02', color: 'green',
+    title: 'Twoja Rola',
+    desc: 'Opisz co robisz i komu piszesz — AI dopasuje audyt do Ciebie.',
+    badges: [
+        { text: 'Gemini Chat', cls: 'badge-tool' },
+    ],
+    content: `# PROMPT 2: ROLA
+
+#### (Chat — Gemini)
+
+---
+
+## KONTEKST I CEL
+
+Przeprowadzisz wywiad o roli uczestnika w firmie. Celem jest zbudowanie profilu roli, który AI będzie używać do personalizacji audytu greenwashingu.
+
+Wynik tego wywiadu to plik rola.md — drugi z trzech plików kontekstowych.
+
+WAŻNE: Każdy uczestnik ma INNĄ rolę. Handlowiec tworzy inne materiały niż marketingowiec. Profil musi to odzwierciedlać.
+
+## METODOLOGIA
+
+- Zadawaj pytania PO JEDNYM. Czekaj na odpowiedź.
+- Nie komentuj odpowiedzi — przejdź do następnego pytania.
+- Jeśli odpowiedź jest zbyt ogólna, dopytaj RAZ: "Jaki konkretny materiał tworzysz najczęściej?"
+- Jeśli uczestnik mówi "nie tworzę żadnych materiałów" — dopytaj: "A czy zatwierdzasz, przeglądasz lub wysyłasz dalej materiały innych osób?"
+- Po wszystkich odpowiedziach wygeneruj plik rola.md.
+
+---
+
+## PYTANIA
+
+### CZĘŚĆ 1: KIM JESTEM W FIRMIE (4 pytania)
+
+1. Jakie jest Twoje stanowisko? Jak długo pracujesz w tej firmie?
+2. Jakie są Twoje główne obowiązki? Opisz typowy tydzień pracy.
+3. Z kim najczęściej współpracujesz? (dział, osoby, zewnętrzni partnerzy)
+4. Czy masz kontakt z klientami? Jeśli tak — jak wygląda ta komunikacja? (spotkania, maile, telefony, prezentacje)
+
+_(Czekaj na odpowiedzi, potem przejdź do części 2)_
+
+### CZĘŚĆ 2: CO TWORZĘ I KOMU (4 pytania)
+
+5. Jakie komunikaty lub materiały tworzysz w ramach pracy? (np. oferty, maile do klientów, posty w social media, broszury, prezentacje, raporty — wymień WSZYSTKIE)
+6. Jakie materiały zatwierdzasz, przeglądasz lub wysyłasz dalej? (nawet jeśli nie ty je pisałeś)
+7. Kto jest odbiorcą tych materiałów? (klienci B2B, media, urząd, pracownicy, klienci końcowi — dla każdego materiału osobno)
+8. Jak często tworzysz materiały z treścią dotyczącą ekologii lub środowiska? (codziennie, raz w tygodniu, okazjonalnie, nigdy)
+
+_(Czekaj na odpowiedzi, potem przejdź do części 3)_
+
+### CZĘŚĆ 3: WĄTPLIWOŚCI I POTRZEBY (4 pytania)
+
+9. Czy kiedykolwiek miałeś wątpliwości, czy jakiś komunikat firmy nie jest "za mocny" albo "za dużo obiecuje" pod kątem ekologii? Jeśli tak — opisz sytuację.
+10. Czy klient, partner lub ktoś z zewnątrz kiedyś zadał Ci trudne pytanie o ekologiczność firmy? Na które nie umiałeś odpowiedzieć?
+11. Co jest najtrudniejsze w komunikowaniu ekologii firmy w Twojej roli?
+12. Gdybyś mógł mieć jedną superumiejętność w pracy z komunikacją ekologiczną — co by to było?
+
+---
+
+## FORMAT WYNIKU
+
+Po zebraniu odpowiedzi wygeneruj plik rola.md z sekcjami:
+- STANOWISKO
+- WSPÓŁPRACA
+- MATERIAŁY KTÓRE TWORZĘ (per materiał: odbiorca + częstotliwość)
+- MATERIAŁY KTÓRE ZATWIERDZAM/PRZEKAZUJĘ
+- CZĘSTOTLIWOŚĆ TREŚCI EKOLOGICZNYCH
+- WĄTPLIWOŚCI I DOŚWIADCZENIA
+- CZEGO POTRZEBUJĘ
+- INSTRUKCJE DLA AI`
+},
+{
+    id: 'przekaz', section: 'kontekst', number: '03', color: 'green',
+    title: 'Mapa Komunikacji',
+    desc: 'Wymień wszystkie hasła ekologiczne firmy. To Twoja amunicja do audytu.',
+    badges: [
+        { text: 'Gemini Chat', cls: 'badge-tool' },
+    ],
+    content: `# PROMPT 3: PRZEKAZ
+
+#### (Chat — Gemini)
+
+---
+
+## KONTEKST I CEL
+
+Przeprowadzisz wywiad o komunikacji ekologicznej firmy uczestnika. Celem jest zmapowanie aktualnych claims, haseł i materiałów — to będzie "amunicja" do audytu greenwashingu.
+
+Wynik tego wywiadu to plik przekaz.md — trzeci z trzech plików kontekstowych.
+
+WAŻNE: Pytaj o KONKRETNE sformułowania, nie o ogólniki. "Chronimy środowisko" to claim. "Mamy ISO 14001" to fakt. Różnica jest kluczowa.
+
+## METODOLOGIA
+
+- Zadawaj pytania PO JEDNYM. Czekaj na odpowiedź.
+- Nie komentuj odpowiedzi — przejdź do następnego pytania.
+- Jeśli uczestnik podaje claim — poproś o DOKŁADNE brzmienie (cytat). "Jak to dokładnie jest napisane?"
+- Jeśli odpowiedź jest "nie wiem" lub "nie pamiętam" — zanotuj to i idź dalej. "Nie wiem" to też ważna informacja.
+- Po wszystkich odpowiedziach wygeneruj plik przekaz.md.
+
+---
+
+## PYTANIA
+
+### CZĘŚĆ 1: CLAIMS I HASŁA (5 pytań)
+
+1. Jakie hasła lub slogany ekologiczne używa Twoja firma? Wymień DOKŁADNE sformułowania — ze strony www, folderów, ofert, social media.
+2. Czy firma używa słów: "eko", "zielony", "przyjazny środowisku", "zrównoważony", "neutralny klimatycznie"? Gdzie konkretnie?
+3. Czy firma podaje konkretne LICZBY dotyczące ekologii w komunikacji? Jeśli tak — jakie i gdzie?
+4. Czy te liczby mają źródło? Wiesz skąd pochodzą?
+5. Czy claims zmieniały się w ostatnich latach? Czy dodano nowe hasła ekologiczne?
+
+_(Czekaj na odpowiedzi, potem przejdź do części 2)_
+
+### CZĘŚĆ 2: MATERIAŁY I KANAŁY (4 pytania)
+
+6. Przez jakie kanały firma komunikuje ekologię? (strona www, social media, foldery handlowe, oferty PDF, prezentacje, targi, reklamy, opakowania?)
+7. Jakie oznaczenia ekologiczne, certyfikaty lub symbole umieszczacie na materiałach?
+8. Czy macie wewnętrzne wytyczne dotyczące komunikacji ekologicznej?
+9. Kto decyduje o treści materiałów ekologicznych?
+
+_(Czekaj na odpowiedzi, potem przejdź do części 3)_
+
+### CZĘŚĆ 3: OTOCZENIE I HISTORIA (4 pytania)
+
+10. Czy porównujecie się z konkurencją pod kątem ekologii? Jeśli tak — jakich argumentów używacie?
+11. Czy ktoś z zewnątrz kiedykolwiek zakwestionował wasze twierdzenia ekologiczne? Co się stało?
+12. Czy firma planuje nowe inicjatywy ekologiczne lub zmiany w komunikacji?
+13. Gdybyś musiał wskazać JEDNO sformułowanie w komunikacji firmy, które budzi Twoje największe wątpliwości — co by to było?
+
+---
+
+## FORMAT WYNIKU
+
+Po zebraniu odpowiedzi wygeneruj plik przekaz.md z sekcjami:
+- CLAIMS EKOLOGICZNE (dosłowne cytaty)
+- SŁOWA KLUCZOWE W UŻYCIU
+- DANE LICZBOWE W KOMUNIKACJI
+- KANAŁY KOMUNIKACJI
+- OZNACZENIA I SYMBOLE
+- WYTYCZNE WEWNĘTRZNE
+- PORÓWNANIA Z KONKURENCJĄ
+- HISTORIA KWESTIONOWANIA
+- PLANOWANE ZMIANY
+- CLAIMS DO PRIORYTETOWEGO AUDYTU (top 3)
+- INSTRUKCJE DLA AI`
+},
+// --- PIPELINE ---
+{
+    id: 'claims', section: 'pipeline', number: '04', color: 'yellow',
+    title: 'KROK 1: CLAIMS',
+    desc: 'Znajdź KAŻDE twierdzenie ekologiczne — jawne i ukryte',
+    badges: [
+        { text: 'Gemini', cls: 'badge-tool' },
+    ],
+    content: `Przeanalizuj wszystkie materiały firmy które masz w kontekście (foldery, oferty, stronę www, posty).
+
+Znajdź KAŻDE twierdzenie ekologiczne — jawne i ukryte.
+
+Dla każdego znalezionego twierdzenia podaj:
+
+1. CYTAT — dokładne sformułowanie (w cudzysłowie)
+2. ŹRÓDŁO — z jakiego materiału pochodzi
+3. TYP — jawny claim ("jesteśmy eko") czy sugestia (zielone kolory, symbol liścia, zdjęcia natury)
+4. CO OBIECUJE — co odbiorca może zrozumieć z tego twierdzenia
+
+Na końcu podsumuj:
+- Ile claims jawnych znalazłeś?
+- Ile sugestii?
+- Które twierdzenia powtarzają się w wielu materiałach?
+
+Szukaj dokładnie. Lepiej znaleźć za dużo niż za mało.`
+},
+{
+    id: 'detekcja', section: 'pipeline', number: '05', color: 'yellow',
+    title: 'KROK 2: DETEKCJA',
+    desc: 'Oceń każdy claim przez 7 grzechów greenwashingu. Zielony, żółty lub czerwony.',
+    badges: [
+        { text: 'Gemini', cls: 'badge-tool' },
+    ],
+    content: `Weź listę claims z poprzedniej analizy.
+
+Sprawdź KAŻDY claim przez 7 grzechów greenwashingu:
+
+1. UKRYTY KOMPROMIS — podkreśla jedną zaletę, ukrywa większy problem
+2. BRAK DOWODU — twierdzi coś, ale nie podaje źródła/certyfikatu
+3. NIEJASNOŚĆ — zbyt ogólne sformułowanie ("eko", "zielony", "naturalny")
+4. FAŁSZYWE ETYKIETY — wygląda na certyfikat, ale nim nie jest
+5. NIEISTOTNOŚĆ — prawdziwe, ale bez znaczenia ("nie zawiera CFC" — nikt nie zawiera)
+6. MNIEJSZE ZŁO — "ekologiczne" w kategorii która sama w sobie szkodzi
+7. KŁAMSTWO — po prostu nieprawda
+
+Dla każdego claim:
+- CYTAT: [powtórz claim]
+- GRZECH: [który grzech narusza — lub "brak"]
+- OCENA: ZIELONY (ok) / ŻÓŁTY (do poprawy) / CZERWONY (poważny problem)
+- UZASADNIENIE: [1-2 zdania — dlaczego ta ocena]
+- RYZYKO: [co może się stać jeśli ktoś to zakwestionuje]
+
+Na końcu podsumuj:
+- Ile ZIELONYCH / ŻÓŁTYCH / CZERWONYCH?
+- Który grzech pojawia się najczęściej?
+- Które claims wymagają natychmiastowej uwagi?`
+},
+{
+    id: 'etykiety', section: 'pipeline', number: '06', color: 'yellow',
+    title: 'KROK 3: ETYKIETY',
+    desc: 'Sprawdź czy Twoje certyfikaty i oznaczenia są użyte prawidłowo.',
+    badges: [
+        { text: 'Gemini', cls: 'badge-tool' },
+    ],
+    content: `Weź claims ocenione jako ŻÓŁTE i CZERWONE z poprzedniej analizy.
+
+Teraz sprawdź OZNACZENIA I ETYKIETY w materiałach firmy:
+
+1. CERTYFIKATY — czy użyte certyfikaty (ISO, ekoznaki) są:
+   - Aktualne i ważne?
+   - Pokazane z pełną nazwą i numerem?
+   - Użyte w odpowiednim kontekście? (np. ISO 14001 to system zarządzania, NIE certyfikat produktu)
+
+2. SYMBOLE — czy symbole ekologiczne na materiałach:
+   - Są oficjalne i rozpoznawalne? (EU Ecolabel, FSC, Möbius loop)
+   - Czy to nie są własne "pseudocertyfikaty"? (zielony znaczek bez oficjalnego statusu)
+   - Są użyte zgodnie z zasadami licencji?
+
+3. SFORMUŁOWANIA — czy etykiety tekstowe:
+   - Są zgodne z Dyrektywą Green Claims?
+   - Nie używają zakazanych ogólników? ("eko", "zielony" bez kontekstu)
+   - Mają wymagane odniesienia do źródeł/danych?
+
+Dla każdego oznaczenia:
+- CO TO JEST: [opis oznaczenia]
+- GDZIE: [w jakim materiale]
+- STATUS: OK / MYLĄCE / BRAKUJE KONTEKSTU / FAŁSZYWE
+- CO POPRAWIĆ: [konkretna rekomendacja]
+
+Na końcu:
+- Co jest OK i można zostawić
+- Co wymaga dodania kontekstu
+- Co należy usunąć lub zmienić`
+},
+{
+    id: 'rewrite', section: 'pipeline', number: '07', color: 'yellow',
+    title: 'KROK 4: REWRITE',
+    desc: 'Przepisz problematyczne claims na uczciwe wersje. Gotowe do wklejenia.',
+    badges: [
+        { text: 'Gemini', cls: 'badge-tool' },
+    ],
+    content: `Weź ŻÓŁTE i CZERWONE claims z naszej analizy.
+
+Przeformułuj każdy na UCZCIWĄ wersję. Zasady rewritingu:
+
+1. MÓW CO ROBISZ, NIE CZYM JESTEŚ
+   - Źle: "Jesteśmy eko firmą"
+   - Dobrze: "W 2025 roku przetworzyliśmy 12 000 ton elektroodpadów"
+
+2. LICZBY I ŹRÓDŁA ZAMIAST OGÓLNIKÓW
+   - Źle: "Znacząco redukujemy emisje"
+   - Dobrze: "Emisje CO2 z naszego zakładu spadły o 18% r/r (raport środowiskowy 2025)"
+
+3. KONKRET ZAMIAST OBIETNICY
+   - Źle: "Chronimy środowisko"
+   - Dobrze: "Każdy odebrany pojemnik trafia do certyfikowanego procesu recyclingu wg normy EN 50625"
+
+4. UCZCIWE OGRANICZENIA
+   - Źle: "100% trafia do recyclingu"
+   - Dobrze: "Średnio 94% materiałów odzyskujemy do ponownego użycia. Pozostałe 6% to frakcje nierecyklingowalne, które utylizujemy zgodnie z normami."
+
+WAŻNE: Przeformułuj DLA MATERIAŁÓW KTÓRE JA TWORZĘ W MOJEJ ROLI.
+Znasz moją rolę z pliku rola.md — dostosuj format i ton:
+- Jeśli tworzę oferty handlowe → napisz wersję do oferty
+- Jeśli tworzę posty social media → napisz wersję na social
+- Jeśli tworzę maile do klientów → napisz wersję do maila
+- Jeśli tworzę raporty → napisz wersję do raportu
+
+Dla każdego claim daj:
+- ORYGINAŁ: [stary claim]
+- PROBLEM: [co jest nie tak — 1 zdanie]
+- NOWA WERSJA: [uczciwe sformułowanie]
+- FORMAT: [do jakiego materiału — na podstawie mojej roli]
+- DLACZEGO LEPIEJ: [1 zdanie — co zyskujemy]
+
+Na końcu: zbierz WSZYSTKIE nowe wersje w jednym miejscu — gotowe do kopiowania.`
+},
+// --- GEM ---
+{
+    id: 'gem-inst', section: 'asystent', number: '08', color: 'green',
+    title: 'Asystent Greenwashingu',
+    desc: 'Wklej te instrukcje do Gemini — masz gotowego asystenta z 7 opcjami.',
+    badges: [
+        { text: 'Gemini', cls: 'badge-tool' },
+        { text: '537 linii', cls: 'badge-target' },
+    ],
+    content: `Jestem Asystentem Greenwashingu — Twoim narzędziem do weryfikacji i poprawiania komunikacji ekologicznej firmy.
+
+Znam Twoją firmę, Twoją rolę i Twój przekaz (mam Twoje pliki). Nie pytam o podstawy — działam.
+
+Moje zadanie: Pomagam Ci komunikować ekologię UCZCIWIE — tak żeby budować zaufanie, nie ryzyko.
+
+PLIKI KTÓRE ZNAM:
+- firma.md — profil firmy
+- rola.md — Twoja rola
+- przekaz.md — mapa komunikacji firmy
+- Materiały Terra — folder handlowy, oferta, inne dokumenty
+
+TRYB MINIATUROWY (domyślny): Max 300 słów, punkty, fakty, rekomendacje.
+TRYB TWORZENIA: "Napisz pełną wersję" — pełne komunikaty, kilka wariantów.
+
+OSOBOWOŚĆ: Jestem AUDYTOREM, nie krytykiem.
+- Rzeczowy: Fakty i dane, nie opinie
+- Konkretny: "Zmień X na Y" zamiast "rozważ zmianę"
+- Uczciwy: Jeśli claim jest OK — mówię że OK
+- Pomocny: Nie tylko "co jest źle" ale "jak to naprawić"
+
+MOTTO: "Mów co ROBISZ, nie czym JESTEŚ. Liczby i źródła zamiast ogólników."
+
+MENU — 7 OPCJI:
+[1] QUICK CHECK — szybka ocena: TAK / NIE / POPRAW
+[2] WERYFIKATOR ETYKIET — sprawdź certyfikaty i oznaczenia
+[3] REWRITER — przeformułuj na uczciwy komunikat
+[4] CHECKLISTA ZGODNOŚCI — sprawdź wg Green Claims Directive
+[5] ANALIZA KONKURENCJI — rozłóż komunikat konkurenta
+[6] DEEP RESEARCH PROMPT — wygeneruj prompt do głębokiego researchu
+[7] KRYZYS — checklist kryzysowa + komunikat wg roli
+
+Wybierz numer (1-7) lub wklej komunikat do sprawdzenia.
+Jeśli wkleisz komunikat bez numeru — domyślnie uruchamiam [1] QUICK CHECK.
+
+SYSTEM ANTY-HALUCYNACYJNY:
+ZAKAZANE SŁOWA: "około", "prawdopodobnie", "powinno być OK", "z pewnością"
+→ Podaj dokładną liczbę lub napisz "nie mam danych"
+
+WYMUSZANIE ŹRÓDEŁ:
+- Przy KAŻDEJ liczbie/fakcie → podaję skąd to wiem
+- Jeśli nie mam źródła → NIE PODAJĘ informacji
+
+TRIPLE CHECK — przed każdą odpowiedzią:
+1. Czy to PRAWDA? — Mam na to źródło?
+2. Czy może ZASZKODZIĆ? — Co jeśli ktoś użyje tej rady i się pomyli?
+3. Czy mam ŹRÓDŁO? — Mogę powiedzieć SKĄD to wiem?
+
+"NIE WIEM" > ZMYŚLANIE
+
+PROTOKÓŁ ODPOWIEDZI:
+ZAWSZE: Czytam pliki, personalizuję wg roli, daję konkret, cytuję źródła, proponuję następny krok.
+NIGDY: Nie wymyślam danych, nie straszę karami, nie oceniam firmy, nie daję porad prawnych.
+
+POWITANIE:
+Cześć! Jestem Asystentem Greenwashingu Terra Recycling.
+Znam Twoją firmę, Twoją rolę i Twój przekaz — mam Twoje pliki.
+Co mogę dla Ciebie zrobić?
+[1]-[7] lub wklej komunikat do sprawdzenia.`
+},
+// --- DZIEŃ 2 ---
+{
+    id: 'dr-kryzys', section: 'dzien2', number: '09', color: 'pink',
+    title: 'Checklist Kryzysowa',
+    desc: 'Zlecasz AI deep research — wraca z checklistą: co robić w pierwszych 60 minutach kryzysu.',
+    badges: [
+        { text: 'ChatGPT DR', cls: 'badge-tool' },
+    ],
+    content: `Przeprowadź głęboki research na temat zarządzania kryzysowego w firmach z branży recyklingowej / gospodarki odpadami w Polsce i UE.
+
+KONTEKST:
+Firma: Terra Recycling (Grodzisk Mazowiecki)
+Branża: Recykling sprzętu elektrycznego i elektronicznego (WEEE)
+Skala: Krajowa, kilkadziesiąt osób, klienci B2B
+Certyfikaty: ISO 14001, norma EN 50625
+Kluczowe ryzyka: zarzuty o greenwashing, zawyżanie wskaźników, mylące certyfikaty, nieścisłości w komunikacji ekologicznej
+
+PYTANIA BADAWCZE:
+
+1. REALNE KRYZYSY W BRANŻY:
+   - Jakie kryzysy wizerunkowe związane z greenwashingiem dotknęły firmy recyklingowe/środowiskowe w Polsce i UE w ostatnich 5 latach?
+   - Co dokładnie się stało? Jak firmy zareagowały? Co zadziałało, co nie?
+   - Podaj konkretne nazwy firm i daty (jeśli dostępne)
+
+2. CHECKLIST KRYZYSOWA:
+   Stwórz szczegółową checklistę działań kryzysowych dla firmy recyklingowej na wypadek zarzutów o greenwashing:
+   a) PIERWSZE 60 MINUT — co robić natychmiast
+   b) PIERWSZE 24 GODZINY — następne kroki
+   c) PIERWSZY TYDZIEŃ — działania naprawcze
+   d) PO KRYZYSIE — wnioski i prewencja
+
+3. KOMUNIKACJA KRYZYSOWA:
+   - Jakie szablony komunikatów stosują firmy z branży?
+   - Jak brzmi dobry komunikat kryzysowy vs zły?
+   - Jakie kanały komunikacji priorytetyzować?
+
+4. REGULACJE:
+   - Jakie konsekwencje prawne grożą za greenwashing w Polsce/UE (2025-2026)?
+   - Green Claims Directive — co zmienia w kontekście kryzysów?
+
+5. PREWENCJA:
+   - Jakie procedury wewnętrzne minimalizują ryzyko kryzysu?
+   - Jak firmy recyklingowe prowadzą "self-audit" komunikacji?
+
+FORMAT: Konkretne, z datami i nazwami. Case studies. Checklisty z checkboxami. Źródła przy każdym fakcie.`
+},
+{
+    id: 'symulacja-scenariusz', section: 'dzien2', number: '10a', color: 'pink',
+    title: 'Scenariusz Kryzysowy',
+    desc: 'Poniedziałek, 8:30 rano. Gazeta opublikowała artykuł o Twojej firmie. Co robisz?',
+    badges: [
+        { text: 'Projektor', cls: 'badge-tool' },
+    ],
+    content: `SYMULACJA KRYZYSOWA
+
+Jest poniedziałek, 8:30 rano.
+
+Lokalna gazeta "Kurier Grodziski" opublikowała artykuł:
+
+"TERRA RECYCLING ZAWYŻA WSKAŹNIKI RECYCLINGU O 15%?
+ Anonimowy informator twierdzi, że firma podaje
+ wskaźnik odzysku 94%, podczas gdy realna wartość
+ wynosi poniżej 80%."
+
+Artykuł został udostępniony 47 razy na Facebooku.
+Lokalny radny skomentował: "Będziemy się temu przyglądać."
+Telefon dzwoni — klient B2B pyta "czy to prawda?"`
+},
+{
+    id: 'karta-a', section: 'dzien2', number: '10b', color: 'pink',
+    title: 'Karta A: Handlowiec',
+    desc: 'Napisz email do klientów B2B. Uprzedź pytania, daj fakty, utrzymaj zaufanie.',
+    badges: [
+        { text: 'Asystent [7]', cls: 'badge-tool' },
+        { text: 'Email B2B', cls: 'badge-target' },
+    ],
+    content: `TWOJE ZADANIE:
+
+Napisz email do 3 największych klientów B2B firmy.
+
+Cel: Uprzedzić pytania. Dać fakty. Utrzymać zaufanie.
+
+Użyj Asystenta [7] KRYZYS. Wklej scenariusz i poproś o pomoc.
+
+CZAS: 30 min
+FORMAT: Email (max 200 słów)
+ODBIORCA: Klienci B2B (decydenci zakupowi)
+
+MUSI ZAWIERAĆ:
+- Odniesienie do artykułu (nie udawaj że nie istnieje)
+- Twoje stanowisko z DANYMI (nie opiniami)
+- Kontakt do osoby odpowiedzialnej
+- Konkretny następny krok
+
+NIE MOŻE ZAWIERAĆ:
+- Ataku na gazetę/informatora
+- Obietnic bez pokrycia
+- Legalese / korporacyjnej mowy`
+},
+{
+    id: 'karta-b', section: 'dzien2', number: '10c', color: 'pink',
+    title: 'Karta B: PR / Marketing',
+    desc: 'Napisz komunikat prasowy. Stanowisko firmy, fakty, konkretne kroki.',
+    badges: [
+        { text: 'Asystent [7]', cls: 'badge-tool' },
+        { text: 'Komunikat prasowy', cls: 'badge-target' },
+    ],
+    content: `TWOJE ZADANIE:
+
+Napisz oficjalny komunikat prasowy firmy Terra Recycling.
+
+Cel: Przedstawić stanowisko firmy. Dać fakty. Nie eskalować.
+
+Użyj Asystenta [7] KRYZYS. Wklej scenariusz i poproś o pomoc.
+
+CZAS: 30 min
+FORMAT: Komunikat prasowy (max 300 słów)
+ODBIORCA: Media, opinia publiczna
+
+MUSI ZAWIERAĆ:
+- Stanowisko firmy (jasne, bez dwuznaczności)
+- Fakty i dane (certyfikaty, audyty, normy)
+- Co firma ROBI w odpowiedzi (konkretne kroki)
+- Kontakt dla mediów
+
+NIE MOŻE ZAWIERAĆ:
+- "Bez komentarza"
+- Ataku na źródło informacji
+- Pustych frazesów ("przykładamy wagę do...")
+- Obietnic bez konkretów`
+},
+{
+    id: 'karta-c', section: 'dzien2', number: '10d', color: 'pink',
+    title: 'Karta C: Biuro / Inne',
+    desc: 'Napisz post na FB + wiadomość do pracowników. Co mówić, czego nie mówić.',
+    badges: [
+        { text: 'Asystent [7]', cls: 'badge-tool' },
+        { text: 'FB + email', cls: 'badge-target' },
+    ],
+    content: `TWOJE ZADANIE:
+
+Napisz 2 komunikaty:
+1. Post na Facebooka firmy (odpowiedź na artykuł)
+2. Wiadomość do pracowników (co mówić gdy ktoś pyta)
+
+Użyj Asystenta [7] KRYZYS. Wklej scenariusz i poproś o pomoc.
+
+CZAS: 30 min
+FORMAT: Post FB (max 150 słów) + email wewnętrzny (max 150 słów)
+ODBIORCA: 1) Społeczność online  2) Pracownicy
+
+POST FB MUSI ZAWIERAĆ:
+- Krótkie odniesienie do sytuacji
+- 1-2 konkretne fakty
+- Zaproszenie do dialogu (nie zamknięcie dyskusji)
+
+EMAIL WEWNĘTRZNY MUSI ZAWIERAĆ:
+- Co się stało (fakty)
+- Co firma robi
+- Co pracownicy mają mówić gdy ktoś pyta
+- Czego NIE mówić
+
+NIE MOŻE ZAWIERAĆ:
+- Paniki
+- Ataku na gazetę
+- "Nie rozmawiajcie z nikim"`
+},
+{
+    id: 'symulacja-prompt', section: 'dzien2', number: '10e', color: 'pink',
+    title: 'Prompt Kryzysowy',
+    desc: 'Wklej scenariusz do Asystenta — poproś o pomoc z komunikatem.',
+    badges: [
+        { text: 'Asystent [7]', cls: 'badge-tool' },
+    ],
+    content: `Scenariusz kryzysowy:
+
+Lokalna gazeta "Kurier Grodziski" opublikowała artykuł:
+"Terra Recycling zawyża wskaźniki recyclingu o 15%?"
+Anonimowy informator twierdzi wskaźnik 94% vs realne poniżej 80%.
+Artykuł udostępniony 47 razy na FB.
+Lokalny radny: "Będziemy się temu przyglądać."
+Klienci B2B dzwonią z pytaniami.
+
+Moje zadanie: Napisz [TYP KOMUNIKATU z karty] dla [ODBIORCA].
+Użyj danych z moich plików kontekstowych.`
+},
+{
+    id: 'zamkniecie', section: 'dzien2', number: '11', color: 'pink',
+    title: 'Wasza Firma za 2 Lata',
+    desc: 'Jak będzie wyglądać Twoja firma za 2 lata — jeśli wykorzystasz to, co zbudowałeś.',
+    badges: [
+        { text: 'Gemini · Projektor', cls: 'badge-tool' },
+    ],
+    content: `Wyobraź sobie, że minęły 2 lata. Jest luty 2028.
+
+Jesteś nowym pracownikiem Terra Recycling. Przyszedłeś do pracy pierwszy dzień. Ktoś Ci pokazuje jak firma komunikuje się ze światem.
+
+Opisz co WIDZISZ — na podstawie tego, co uczestnicy szkolenia zbudowali dzisiaj i wczoraj:
+- Asystent z 7 opcjami i systemem anty-halucynacyjnym
+- 3 pliki kontekstowe (firma, rola, przekaz) — wzbogacone przez Deep Research
+- Pipeline audytu greenwashingu
+- Checklistę kryzysową
+- Komunikaty przetestowane i poprawione przez grupę
+
+Pisz z perspektywy tego nowego pracownika. Co go zaskakuje?
+Co jest inne niż w poprzedniej firmie? Co czuje?
+
+Krótko. 150 słów max. Bez lania wody. Z emocją.`
+},
+// --- BONUS ---
+{
+    id: 'bonus-1', section: 'bonus', number: 'B1', color: 'lime',
+    title: 'Audyt Własny',
+    desc: 'Przepuść PRAWDZIWY materiał ze swojej pracy przez Quick Check',
+    badges: [
+        { text: 'Asystent [1]', cls: 'badge-tool' },
+    ],
+    content: `BONUS: AUDYT WŁASNY
+
+Weź PRAWDZIWY materiał ze swojej codziennej pracy:
+- Ostatni email do klienta
+- Fragment oferty
+- Post który napisałeś/aś
+
+Przepuść go przez Asystenta [1] Quick Check.
+
+Pytanie: Czy w TWOJEJ codziennej komunikacji jest greenwashing?
+
+Jeśli znajdziesz coś żółtego/czerwonego — użyj [3] Rewriter i zrób uczciwą wersję.`
+},
+{
+    id: 'bonus-2', section: 'bonus', number: 'B2', color: 'lime',
+    title: 'Dziennikarskie Pytania',
+    desc: 'AI gra dziennikarza śledczego. 5 pytań, na które trudno odpowiedzieć.',
+    badges: [
+        { text: 'Gemini', cls: 'badge-tool' },
+    ],
+    content: `BONUS: 5 NAJTRUDNIEJSZYCH PYTAŃ
+
+Wklej do Asystenta:
+
+"Wciel się w dziennikarza śledczego który pisze artykuł o greenwashingu w branży recyklingowej. Zadaj mi 5 najtrudniejszych pytań o ekologiczność mojej firmy — takich, na które trudno odpowiedzieć."
+
+Potem spróbuj na nie odpowiedzieć — z pomocą Asystenta.
+
+Na które pytania NIE UMIESZ odpowiedzieć?
+→ To są Twoje tematy do Deep Research.`
+},
+{
+    id: 'bonus-3', section: 'bonus', number: 'B3', color: 'lime',
+    title: 'Porównanie Narzędzi',
+    desc: 'Ten sam claim w Gemini, ChatGPT i DeepSeek — co daje kontekst?',
+    badges: [
+        { text: 'Multi-tool', cls: 'badge-tool' },
+    ],
+    content: `BONUS: TEST PORÓWNAWCZY
+
+Weź 1 claim z pipeline'u (np. "100% materiałów trafia do recyclingu").
+
+Wklej TEN SAM prompt do 3 narzędzi:
+- Gemini (w Gemie — z kontekstem)
+- ChatGPT (bez kontekstu — czysty czat)
+- DeepSeek (bez kontekstu)
+
+Porównaj odpowiedzi:
+1. Która jest najlepsza? Dlaczego?
+2. Czym się różnią?
+3. Co daje KONTEKST? (Asystent vs czysty czat)
+
+Zapiszcie 3 wnioski.`
+},
+{
+    id: 'bonus-4', section: 'bonus', number: 'B4', color: 'lime',
+    title: 'Wzbogacenie Plików',
+    desc: 'Asystent proponuje co dodać do Twoich plików po Deep Research. Akceptujesz lub odrzucasz.',
+    badges: [
+        { text: 'Gemini', cls: 'badge-tool' },
+    ],
+    content: `BONUS: WZBOGACENIE PLIKÓW
+
+Masz wynik Deep Research. Wkleiłeś go do Asystenta.
+
+Teraz poproś Asystenta:
+
+"Na podstawie wyników Deep Research — jakie NOWE informacje powinienem dodać do moich plików firma.md, rola.md, przekaz.md? Proponuj zmiany po kolei. Ja akceptuję lub odrzucam."
+
+Cel: Twoje pliki kontekstowe rosną. Asystent staje się mądrzejszy.`
+},
+];
+
+// ============ RENDER CARDS ============
+function renderCard(p) {
+    const badges = p.badges.map(b =>
+        `<span class="badge ${b.cls}">${b.text}</span>`
+    ).join('');
+
+    const isLong = p.content.length > 800;
+    const promptId = `prompt-${p.id}`;
+    const blockId = `block-${p.id}`;
+
+    return `
+    <div class="prompt-card anim">
+        <div class="card-header ${p.color}">
+            <span class="card-num">${p.number}</span>
+            <span class="card-title">${p.title}</span>
+        </div>
+        <p class="card-desc">${p.desc}</p>
+        <div class="card-badges">${badges}</div>
+        <div class="prompt-block" id="${blockId}">
+            <pre class="prompt-text" id="${promptId}">${escapeHtml(p.content)}</pre>
+            ${isLong ? '<div class="prompt-fade"></div>' : ''}
+        </div>
+        <div class="card-actions">
+            <button class="btn-copy" onclick="copyPrompt('${p.id}')">KOPIUJ</button>
+            ${isLong ? `<button class="btn-expand" onclick="toggleExpand('${p.id}')">ROZWIN</button>` : ''}
+        </div>
+    </div>`;
+}
+
+function escapeHtml(str) {
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// Render all sections
+const sections = {
+    'kontekst': 'kontekst-cards',
+    'pipeline': 'pipeline-cards',
+    'asystent': 'asystent-cards',
+    'dzien2': 'dzien2-cards',
+    'bonus': 'bonus-cards',
+};
+
+Object.entries(sections).forEach(([sec, containerId]) => {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const cards = PROMPTS.filter(p => p.section === sec);
+    container.innerHTML = cards.map(renderCard).join('');
+});
+
+// ============ COPY FUNCTION ============
+let copyCount = 0;
+const toast = document.getElementById('toast');
+const counter = document.getElementById('copy-counter');
+const counterNum = document.getElementById('counter-num');
+
+function copyPrompt(id) {
+    const el = document.getElementById('prompt-' + id);
+    if (!el) return;
+
+    const text = el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        // Button feedback
+        const card = el.closest('.prompt-card');
+        const btn = card.querySelector('.btn-copy');
+        btn.textContent = 'SKOPIOWANO!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = 'KOPIUJ';
+            btn.classList.remove('copied');
+        }, 2000);
+
+        // Toast
+        toast.classList.add('visible');
+        setTimeout(() => toast.classList.remove('visible'), 1500);
+
+        // Counter
+        copyCount++;
+        counterNum.textContent = copyCount;
+        counter.classList.add('visible');
+    });
+}
+
+// ============ EXPAND/COLLAPSE ============
+function toggleExpand(id) {
+    const block = document.getElementById('block-' + id);
+    const card = block.closest('.prompt-card');
+    const btn = card.querySelector('.btn-expand');
+    const isExpanded = block.classList.toggle('expanded');
+    btn.textContent = isExpanded ? 'ZWIŃ' : 'ROZWIŃ';
+}
+
+// ============ SCROLL ANIMATIONS ============
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { rootMargin: '-40px', threshold: 0.1 });
+
+document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+// ============ NAV ACTIVE STATE ============
+const navLinks = document.querySelectorAll('.nav-link');
+const sectionEls = document.querySelectorAll('section[id]');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sectionEls.forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) current = sec.id;
+    });
+    navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.section === current);
+    });
+}, { passive: true });
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+</script>
+
+</body>
+</html>
