@@ -626,9 +626,9 @@ section { padding: 80px 0; }
         <nav class="nav-links">
             <a href="#setup" class="nav-link" data-section="setup">Setup</a>
             <a href="#kontekst" class="nav-link" data-section="kontekst">Kontekst</a>
-            <a href="#pipeline" class="nav-link" data-section="pipeline">Pipeline</a>
+            <a href="#pipeline" class="nav-link" data-section="pipeline">Weryfikacja</a>
             <a href="#asystent" class="nav-link" data-section="asystent">Asystent</a>
-            <a href="#dzien2" class="nav-link" data-section="dzien2">Dzień 2</a>
+            <a href="#dzien2" class="nav-link" data-section="dzien2" style="display: none;">Dzień 2</a>
             <a href="#bonus" class="nav-link" data-section="bonus">Bonus</a>
         </nav>
     </div>
@@ -687,7 +687,7 @@ section { padding: 80px 0; }
         <div class="section-head anim">
             <div class="section-tag" style="background: var(--green); color: var(--white);">Dzień 1 · Warsztat #1</div>
             <h2>Budowanie kontekstu</h2>
-            <p>Opowiedz AI o swojej firmie — zbuduj fundament do audytu.</p>
+            <p>Opowiedz AI o swojej firmie — zbuduj fundament do weryfikacji.</p>
         </div>
         <div class="cards-grid" id="kontekst-cards">
             <!-- Cards injected by JS -->
@@ -702,7 +702,7 @@ section { padding: 80px 0; }
     <div class="container">
         <div class="section-head anim">
             <div class="section-tag" style="background: var(--orange); color: var(--white);">Dzień 1 · Warsztat #3</div>
-            <h2>Pipeline Audytu</h2>
+            <h2>4 Kroki Weryfikacji</h2>
             <p>Znajdź, oceń, sprawdź, przepisz — 4 kroki do uczciwej komunikacji.</p>
         </div>
         <div class="cards-grid" id="pipeline-cards">
@@ -728,7 +728,8 @@ section { padding: 80px 0; }
 <!-- ========================================
      SECTION: DZIEŃ 2 (W5-W7)
      ======================================== -->
-<section id="dzien2" class="sec-dzien2">
+<!-- DZIEŃ 2: ukryty do wtorku 10.02 — usuń style="display: none" żeby odkryć -->
+<section id="dzien2" class="sec-dzien2" style="display: none;">
     <div class="container">
         <div class="section-head anim">
             <div class="section-tag" style="background: var(--white); color: var(--black);">Dzień 2 · Warsztaty #5-#7</div>
@@ -782,7 +783,7 @@ const PROMPTS = [
 {
     id: 'firma', section: 'kontekst', number: '01', color: 'green',
     title: 'Profil Firmy',
-    desc: 'Opowiedz o firmie — AI zbuduje profil do audytu greenwashingu.',
+    desc: 'Opowiedz AI o firmie. Branża, produkty, certyfikaty.',
     badges: [
         { text: 'Gemini Chat', cls: 'badge-tool' },
     ],
@@ -794,7 +795,7 @@ const PROMPTS = [
 
 ## KONTEKST I CEL
 
-Przeprowadzisz wywiad o firmie uczestnika. Celem jest zbudowanie profilu firmy, który AI będzie używać do audytu greenwashingu.
+Przeprowadzisz wywiad o firmie uczestnika. Celem jest zbudowanie profilu firmy, który AI będzie używać do weryfikacji greenwashingu.
 
 Wynik tego wywiadu to plik firma.md — pierwszy z trzech plików kontekstowych ("paszport greenwashingowy").
 
@@ -855,7 +856,7 @@ Po zebraniu odpowiedzi wygeneruj plik firma.md z sekcjami:
 {
     id: 'rola', section: 'kontekst', number: '02', color: 'green',
     title: 'Twoja Rola',
-    desc: 'Opisz co robisz i komu piszesz — AI dopasuje audyt do Ciebie.',
+    desc: 'Opisz swoją rolę. AI dopasuje wyniki do tego co robisz.',
     badges: [
         { text: 'Gemini Chat', cls: 'badge-tool' },
     ],
@@ -867,7 +868,7 @@ Po zebraniu odpowiedzi wygeneruj plik firma.md z sekcjami:
 
 ## KONTEKST I CEL
 
-Przeprowadzisz wywiad o roli uczestnika w firmie. Celem jest zbudowanie profilu roli, który AI będzie używać do personalizacji audytu greenwashingu.
+Przeprowadzisz wywiad o roli uczestnika w firmie. Celem jest zbudowanie profilu roli, który AI będzie używać do personalizacji weryfikacji greenwashingu.
 
 Wynik tego wywiadu to plik rola.md — drugi z trzech plików kontekstowych.
 
@@ -927,7 +928,7 @@ Po zebraniu odpowiedzi wygeneruj plik rola.md z sekcjami:
 {
     id: 'przekaz', section: 'kontekst', number: '03', color: 'green',
     title: 'Mapa Komunikacji',
-    desc: 'Wymień wszystkie hasła ekologiczne firmy. To Twoja amunicja do audytu.',
+    desc: 'Zbierz hasła ekologiczne firmy — to materiał do sprawdzenia.',
     badges: [
         { text: 'Gemini Chat', cls: 'badge-tool' },
     ],
@@ -939,7 +940,7 @@ Po zebraniu odpowiedzi wygeneruj plik rola.md z sekcjami:
 
 ## KONTEKST I CEL
 
-Przeprowadzisz wywiad o komunikacji ekologicznej firmy uczestnika. Celem jest zmapowanie aktualnych claims, haseł i materiałów — to będzie "amunicja" do audytu greenwashingu.
+Przeprowadzisz wywiad o komunikacji ekologicznej firmy uczestnika. Celem jest zmapowanie aktualnych claims, haseł i materiałów — to będzie "amunicja" do weryfikacji greenwashingu.
 
 Wynik tego wywiadu to plik przekaz.md — trzeci z trzech plików kontekstowych.
 
@@ -997,7 +998,7 @@ Po zebraniu odpowiedzi wygeneruj plik przekaz.md z sekcjami:
 - PORÓWNANIA Z KONKURENCJĄ
 - HISTORIA KWESTIONOWANIA
 - PLANOWANE ZMIANY
-- CLAIMS DO PRIORYTETOWEGO AUDYTU (top 3)
+- CLAIMS DO PRIORYTETOWEJ WERYFIKACJI (top 3)
 - INSTRUKCJE DLA AI`
 },
 // --- PIPELINE ---
@@ -1161,7 +1162,7 @@ PLIKI KTÓRE ZNAM:
 TRYB MINIATUROWY (domyślny): Max 300 słów, punkty, fakty, rekomendacje.
 TRYB TWORZENIA: "Napisz pełną wersję" — pełne komunikaty, kilka wariantów.
 
-OSOBOWOŚĆ: Jestem AUDYTOREM, nie krytykiem.
+OSOBOWOŚĆ: Jestem WERYFIKATOREM, nie krytykiem.
 - Rzeczowy: Fakty i dane, nie opinie
 - Konkretny: "Zmień X na Y" zamiast "rozważ zmianę"
 - Uczciwy: Jeśli claim jest OK — mówię że OK
@@ -1176,7 +1177,7 @@ MENU — 7 OPCJI:
 [4] CHECKLISTA ZGODNOŚCI — sprawdź wg Green Claims Directive
 [5] ANALIZA KONKURENCJI — rozłóż komunikat konkurenta
 [6] DEEP RESEARCH PROMPT — wygeneruj prompt do głębokiego researchu
-[7] KRYZYS — checklist kryzysowa + komunikat wg roli
+[7] KRYZYS — checklista kryzysowa + komunikat wg roli
 
 Wybierz numer (1-7) lub wklej komunikat do sprawdzenia.
 Jeśli wkleisz komunikat bez numeru — domyślnie uruchamiam [1] QUICK CHECK.
@@ -1209,7 +1210,7 @@ Co mogę dla Ciebie zrobić?
 // --- DZIEŃ 2 ---
 {
     id: 'dr-kryzys', section: 'dzien2', number: '09', color: 'pink',
-    title: 'Checklist Kryzysowa',
+    title: 'Checklista Kryzysowa',
     desc: 'Zlecasz AI deep research — wraca z checklistą: co robić w pierwszych 60 minutach kryzysu.',
     badges: [
         { text: 'ChatGPT DR', cls: 'badge-tool' },
@@ -1230,7 +1231,7 @@ PYTANIA BADAWCZE:
    - Co dokładnie się stało? Jak firmy zareagowały? Co zadziałało, co nie?
    - Podaj konkretne nazwy firm i daty (jeśli dostępne)
 
-2. CHECKLIST KRYZYSOWA:
+2. CHECKLISTA KRYZYSOWA:
    Stwórz szczegółową checklistę działań kryzysowych dla firmy recyklingowej na wypadek zarzutów o greenwashing:
    a) PIERWSZE 60 MINUT — co robić natychmiast
    b) PIERWSZE 24 GODZINY — następne kroki
@@ -1406,7 +1407,7 @@ Jesteś nowym pracownikiem Terra Recycling. Przyszedłeś do pracy pierwszy dzie
 Opisz co WIDZISZ — na podstawie tego, co uczestnicy szkolenia zbudowali dzisiaj i wczoraj:
 - Asystent z 7 opcjami i systemem anty-halucynacyjnym
 - 3 pliki kontekstowe (firma, rola, przekaz) — wzbogacone przez Deep Research
-- Pipeline audytu greenwashingu
+- Ścieżka weryfikacji greenwashingu (4 kroki)
 - Checklistę kryzysową
 - Komunikaty przetestowane i poprawione przez grupę
 
@@ -1418,12 +1419,12 @@ Krótko. 150 słów max. Bez lania wody. Z emocją.`
 // --- BONUS ---
 {
     id: 'bonus-1', section: 'bonus', number: 'B1', color: 'lime',
-    title: 'Audyt Własny',
+    title: 'Weryfikacja Własna',
     desc: 'Przepuść PRAWDZIWY materiał ze swojej pracy przez Quick Check',
     badges: [
         { text: 'Asystent [1]', cls: 'badge-tool' },
     ],
-    content: `BONUS: AUDYT WŁASNY
+    content: `BONUS: WERYFIKACJA WŁASNA
 
 Weź PRAWDZIWY materiał ze swojej codziennej pracy:
 - Ostatni email do klienta
@@ -1463,7 +1464,7 @@ Na które pytania NIE UMIESZ odpowiedzieć?
     ],
     content: `BONUS: TEST PORÓWNAWCZY
 
-Weź 1 claim z pipeline'u (np. "100% materiałów trafia do recyclingu").
+Weź 1 claim z weryfikacji (np. "100% materiałów trafia do recyclingu").
 
 Wklej TEN SAM prompt do 3 narzędzi:
 - Gemini (w Gemie — z kontekstem)
