@@ -238,6 +238,58 @@ section { padding: 80px 0; }
 }
 .sec-dzien2 .section-head h2,
 .sec-dzien2 .section-head p { color: var(--white); }
+.sec-ape {
+    background: var(--white);
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+.card-info {
+    margin: 12px 20px 0;
+    padding: 16px;
+    background: var(--bg);
+    border: 2px solid var(--black);
+}
+.info-text {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: var(--text);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
+.sec-narzedzia {
+    background: var(--bg);
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+.card-header.dark { background: #333; }
+.btn-link {
+    flex: 1;
+    padding: 12px 16px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: var(--border);
+    cursor: pointer;
+    transition: transform 100ms ease, box-shadow 100ms ease;
+    text-align: center;
+    text-decoration: none;
+    background: var(--black);
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+    display: block;
+}
+.btn-link:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
+}
+.btn-link:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
 .sec-bonus {
     background: var(--lime);
     border-top: var(--border);
@@ -284,6 +336,7 @@ section { padding: 80px 0; }
 .card-header.yellow { background: var(--orange); }
 .card-header.pink { background: var(--pink); }
 .card-header.lime { background: var(--green-dark); }
+.card-header.blue { background: var(--blue); }
 .card-num {
     font-family: var(--font-mono);
     font-weight: 700;
@@ -629,6 +682,8 @@ section { padding: 80px 0; }
             <a href="#pipeline" class="nav-link" data-section="pipeline">Weryfikacja</a>
             <a href="#asystent" class="nav-link" data-section="asystent">Asystent</a>
             <a href="#dzien2" class="nav-link" data-section="dzien2">Dzień 2</a>
+            <a href="#ape" class="nav-link" data-section="ape">Prompty</a>
+            <a href="#narzedzia" class="nav-link" data-section="narzedzia">Narzędzia</a>
             <a href="#bonus" class="nav-link" data-section="bonus">Bonus</a>
         </nav>
     </div>
@@ -741,6 +796,36 @@ section { padding: 80px 0; }
             <p>Gazeta pisze o Twojej firmie. Ćwiczysz reakcję — z AI jako wsparciem.</p>
         </div>
         <div class="cards-grid" id="dzien2-cards">
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: APE FRAMEWORK
+     ======================================== -->
+<section id="ape" class="sec-ape">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--blue); color: var(--white);">Dzień 2 · Jak pisać prompty</div>
+            <h2>Framework APE</h2>
+            <p>Trzy pytania przed każdym promptem. Action, Purpose, Expectation.</p>
+        </div>
+        <div class="cards-grid cards-grid-full" id="ape-cards">
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: NARZĘDZIA AI
+     ======================================== -->
+<section id="narzedzia" class="sec-narzedzia">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: #333; color: var(--white);">Dzień 2 · Narzędzia AI</div>
+            <h2>Narzędzia AI na żywo</h2>
+            <p>Grafika, wideo, mowa, dyktowanie, automatyzacja — 5 narzędzi do pracy.</p>
+        </div>
+        <div class="cards-grid cards-grid-full" id="narzedzia-cards">
         </div>
     </div>
 </section>
@@ -1426,6 +1511,227 @@ Co jest inne niż w poprzedniej firmie? Co czuje?
 
 Krótko. 150 słów max. Bez lania wody. Z emocją.`
 },
+// --- APE ---
+{
+    id: 'ape-framework', section: 'ape', number: 'A', color: 'blue',
+    title: 'Framework APE',
+    desc: 'Trzy pytania przed każdym promptem — i AI wie co robić.',
+    badges: [
+        { text: 'Gemini / ChatGPT', cls: 'badge-tool' },
+    ],
+    info: `Trzy pytania przed każdym promptem:
+
+A = ACTION — Co AI ma ZROBIĆ?
+    Napisz / przeanalizuj / porównaj / zaplanuj / podsumuj / przetłumacz
+
+P = PURPOSE — PO CO? Jaki jest cel?
+    Żeby klient kupił / żeby szef zrozumiał / żeby zespół wiedział co dalej
+
+E = EXPECTATION — Jak ma WYGLĄDAĆ wynik?
+    Email 150 słów / tabela / lista 5 punktów / formalny ton`,
+    content: `ACTION: Napisz email do klienta B2B, który pytał o cenę pojemników na elektroodpady.
+PURPOSE: Utrzymać zainteresowanie klienta i umówić spotkanie.
+EXPECTATION: Max 150 słów, profesjonalny ton, zakończony propozycją terminu spotkania.`
+},
+{
+    id: 'ape-zadania', section: 'ape', number: 'B', color: 'blue',
+    title: '5 Zadań do Ćwiczenia',
+    desc: 'Wybierz jedno. Napisz prompt w APE. Wklej do AI.',
+    badges: [
+        { text: 'Ćwiczenie', cls: 'badge-target' },
+    ],
+    info: `Wybierz jedno zadanie. Napisz prompt w formacie APE.
+Wklej do Gemini lub ChatGPT i zobacz wynik.
+
+1. EMAIL Z OFERTĄ
+   Odpowiedz klientowi, który pyta o cennik usług lub produktów.
+
+2. PODSUMOWANIE SPOTKANIA
+   Zamień chaotyczne notatki ze spotkania w listę zadań z terminami.
+
+3. POST NA SOCIAL MEDIA
+   Napisz post informujący o usłudze lub produkcie Twojej firmy.
+
+4. RAPORT DLA SZEFA
+   Podsumuj wyniki miesiąca — max 10 zdań, z wnioskami.
+
+5. ODPOWIEDŹ NA REKLAMACJĘ
+   Klient niezadowolony z opóźnienia. Przeproś, wyjaśnij, zaproponuj rozwiązanie.`,
+    content: `ACTION: [Co AI ma zrobić — np. "Napisz email..."]
+PURPOSE: [Po co — np. "Żeby klient wiedział..."]
+EXPECTATION: [Jak ma wyglądać — np. "Max 200 słów, profesjonalny ton"]`
+},
+{
+    id: 'cot', section: 'ape', number: 'C', color: 'blue',
+    title: 'Chain of Thought',
+    desc: 'Jedna linijka na końcu promptu — AI pokaże jak myśli.',
+    badges: [
+        { text: 'Gemini / ChatGPT', cls: 'badge-tool' },
+    ],
+    info: `Jedna linijka na końcu promptu:
+
+"Myśl krok po kroku."
+
+AI pokaże swoje rozumowanie — nie tylko wynik,
+ale JAK do niego doszedł.
+
+KIEDY UŻYWAĆ:
+• Porównanie opcji (np. 3 oferty od dostawców)
+• Analiza danych (np. wyniki sprzedaży za kwartał)
+• Planowanie (np. harmonogram projektu)
+• Rozwiązywanie problemów (np. dlaczego spadła sprzedaż)`,
+    content: `W firmie jest 5 działów. Budżet na szkolenia: 50 000 zł.
+Sprzedaż (12 osób), IT (5 osób), Marketing (8 osób),
+HR (3 osoby), Produkcja (22 osób).
+Jak sprawiedliwie rozdzielić budżet?
+
+Myśl krok po kroku.`
+},
+{
+    id: 'costar', section: 'ape', number: 'D', color: 'blue',
+    title: 'COSTAR — Dla Chętnych',
+    desc: 'Rozbudowany framework gdy ważny jest ton, styl i konkretny odbiorca.',
+    badges: [
+        { text: 'Zaawansowany', cls: 'badge-time' },
+    ],
+    info: `Rozbudowana wersja APE z kontrolą tonu i odbiorcy:
+
+C = CONTEXT (Kontekst) — Kim jestem? Jaka sytuacja?
+O = OBJECTIVE (Cel) — Co chcę osiągnąć?
+S = STYLE (Styl) — Jak napisane? (formalny, swobodny, techniczny)
+T = TONE (Ton) — Jaki nastrój? (entuzjastyczny, spokojny, stanowczy)
+A = AUDIENCE (Odbiorcy) — Kto to czyta?
+R = RESPONSE (Odpowiedź) — Jaki format? (email, tabela, lista, raport)
+
+KIEDY COSTAR ZAMIAST APE:
+• Ważny jest TON i STYL (komunikacja z klientem, PR, social media)
+• Piszesz do KONKRETNEGO odbiorcy (zarząd, media, pracownicy)
+• Potrzebujesz precyzyjnej kontroli nad wynikiem`,
+    content: `CONTEXT: Jestem handlowcem w firmie recyklingowej. Klient B2B pytał o pojemniki na elektroodpady.
+OBJECTIVE: Utrzymać zainteresowanie i umówić spotkanie demo.
+STYLE: Profesjonalny, ale ciepły.
+TONE: Pewny siebie, pomocny.
+AUDIENCE: Dyrektor operacyjny w firmie produkcyjnej, decydent zakupowy.
+RESPONSE: Email max 150 słów, zakończony propozycją konkretnego terminu.`
+},
+// --- NARZĘDZIA ---
+{
+    id: 'narz-higgsfield', section: 'narzedzia', number: '1', color: 'dark',
+    title: 'Higgsfield',
+    desc: 'Grafika i wideo AI. Kilka modeli w jednym miejscu.',
+    badges: [
+        { text: 'Grafika + Wideo', cls: 'badge-tool' },
+        { text: 'Free 150 kred/mies', cls: 'badge-time' },
+    ],
+    info: `Narzędzie do generowania grafik i wideo z AI.
+Kilka modeli w jednym miejscu — nie musisz skakać między serwisami.
+
+CO POTRAFI:
+• Generowanie grafik (plakaty, wizualizacje, social media)
+• Tworzenie krótkich wideo (animacje, clipy produktowe)
+• Kilka modeli do wyboru (różne style)
+
+CENA:
+• Darmowy plan: 150 kredytów/miesiąc
+• Płatny: od $9/miesiąc`,
+    link: 'https://higgsfield.ai'
+},
+{
+    id: 'narz-notebooklm', section: 'narzedzia', number: '2', color: 'dark',
+    title: 'NotebookLM',
+    desc: 'Baza wiedzy od Google. Wrzuć dokumenty — AI odpowiada na ich podstawie.',
+    badges: [
+        { text: 'Dokumenty + Podcasty', cls: 'badge-tool' },
+        { text: 'Darmowe', cls: 'badge-time' },
+    ],
+    info: `Baza wiedzy od Google. Wrzucasz dokumenty — AI odpowiada
+TYLKO na ich podstawie i cytuje źródła.
+
+CO POTRAFI:
+• Upload dokumentów (PDF, tekst, strony www)
+• Pytania i odpowiedzi z cytowaniem źródeł
+• Audio Overview — AI generuje podcast z Twoich dokumentów
+• Idealne do: regulaminów, procedur, cenników, onboardingu
+
+PRZYKŁAD:
+Wrzuć folder handlowy. Nowy pracownik pyta AI zamiast Ciebie.
+
+CENA:
+• Darmowe. 3 podcasty dziennie. 100 notatników.`,
+    link: 'https://notebooklm.google.com'
+},
+{
+    id: 'narz-elevenlabs', section: 'narzedzia', number: '3', color: 'dark',
+    title: 'ElevenLabs',
+    desc: 'Synteza mowy AI. Naturalny głos po polsku. Klonowanie głosu.',
+    badges: [
+        { text: 'Audio + Głos', cls: 'badge-tool' },
+        { text: 'Free 10 min/mies', cls: 'badge-time' },
+    ],
+    info: `Synteza mowy AI. Wpisujesz tekst — AI czyta naturalnym głosem.
+Działa po polsku.
+
+CO POTRAFI:
+• Text-to-speech — naturalny głos w wielu językach
+• Klonowanie głosu (Instant Voice Clone — 1 min nagrania)
+• Narracja do wideo, lektor do prezentacji
+• Komunikaty głosowe dla klientów
+
+CENA:
+• Darmowe: 10 min audio/miesiąc
+• Starter: od $5/miesiąc`,
+    link: 'https://elevenlabs.io'
+},
+{
+    id: 'narz-superwhisper', section: 'narzedzia', number: '4', color: 'dark',
+    title: 'Superwhisper',
+    desc: 'Dyktowanie offline. Mów — tekst pojawia się w dowolnej aplikacji.',
+    badges: [
+        { text: 'Dyktowanie', cls: 'badge-tool' },
+        { text: 'macOS / iOS', cls: 'badge-target' },
+    ],
+    info: `Dyktowanie głosowe offline. Mówisz do mikrofonu — tekst
+pojawia się w dowolnej aplikacji (email, Word, czat).
+
+CO POTRAFI:
+• Zamiana mowy na tekst w czasie rzeczywistym
+• Działa OFFLINE — nic nie idzie do chmury
+• Idealne do poufnych notatek i dokumentów
+• Działa w tle z dowolną aplikacją
+
+UWAGA: Tylko macOS i iOS (brak Windows).
+
+CENA:
+• Darmowy plan z małymi modelami
+• Pro: $8,49/miesiąc`,
+    link: 'https://superwhisper.com'
+},
+{
+    id: 'narz-n8n', section: 'narzedzia', number: '5', color: 'dark',
+    title: 'n8n',
+    desc: 'Automatyzacja bez kodowania. Łącz aplikacje w workflow.',
+    badges: [
+        { text: 'Automatyzacja', cls: 'badge-tool' },
+        { text: 'Open source', cls: 'badge-time' },
+    ],
+    info: `Automatyzacja bez kodowania. Łączysz aplikacje w workflow
+— jedno zdarzenie uruchamia serię akcji.
+
+CO POTRAFI:
+• Łączenie aplikacji (email, dysk, bazy danych, AI)
+• Workflow wizualny — drag & drop
+• Integracja z AI (GPT, Gemini, Claude)
+• Open source — możesz hostować samodzielnie
+
+PRZYKŁAD:
+Faktura przychodzi na maila → AI rozpoznaje dane
+→ plik ląduje we właściwym folderze, poprawnie nazwany.
+
+CENA:
+• Self-hosted: darmowy (open source)
+• Cloud: od $20/miesiąc`,
+    link: 'https://n8n.io'
+},
 // --- BONUS ---
 {
     id: 'bonus-1', section: 'bonus', number: 'B1', color: 'lime',
@@ -1513,9 +1819,31 @@ function renderCard(p) {
         `<span class="badge ${b.cls}">${b.text}</span>`
     ).join('');
 
-    const isLong = p.content.length > 800;
     const promptId = `prompt-${p.id}`;
     const blockId = `block-${p.id}`;
+
+    const infoBlock = p.info ? `
+        <div class="card-info">
+            <pre class="info-text">${escapeHtml(p.info)}</pre>
+        </div>` : '';
+
+    const hasContent = !!p.content;
+    const isLong = hasContent && p.content.length > 800;
+
+    const promptBlock = hasContent ? `
+        <div class="prompt-block" id="${blockId}">
+            <pre class="prompt-text" id="${promptId}">${escapeHtml(p.content)}</pre>
+            ${isLong ? '<div class="prompt-fade"></div>' : ''}
+        </div>` : '';
+
+    const linkBtn = p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="btn-link">OTWÓRZ</a>` : '';
+
+    const actions = (hasContent || p.link) ? `
+        <div class="card-actions">
+            ${hasContent ? `<button class="btn-copy" onclick="copyPrompt('${p.id}')">KOPIUJ</button>` : ''}
+            ${hasContent && isLong ? `<button class="btn-expand" onclick="toggleExpand('${p.id}')">ROZWIŃ</button>` : ''}
+            ${linkBtn}
+        </div>` : '';
 
     return `
     <div class="prompt-card anim">
@@ -1525,14 +1853,9 @@ function renderCard(p) {
         </div>
         <p class="card-desc">${p.desc}</p>
         <div class="card-badges">${badges}</div>
-        <div class="prompt-block" id="${blockId}">
-            <pre class="prompt-text" id="${promptId}">${escapeHtml(p.content)}</pre>
-            ${isLong ? '<div class="prompt-fade"></div>' : ''}
-        </div>
-        <div class="card-actions">
-            <button class="btn-copy" onclick="copyPrompt('${p.id}')">KOPIUJ</button>
-            ${isLong ? `<button class="btn-expand" onclick="toggleExpand('${p.id}')">ROZWIN</button>` : ''}
-        </div>
+        ${infoBlock}
+        ${promptBlock}
+        ${actions}
     </div>`;
 }
 
@@ -1546,6 +1869,8 @@ const sections = {
     'pipeline': 'pipeline-cards',
     'asystent': 'asystent-cards',
     'dzien2': 'dzien2-cards',
+    'ape': 'ape-cards',
+    'narzedzia': 'narzedzia-cards',
     'bonus': 'bonus-cards',
 };
 
