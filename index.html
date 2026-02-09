@@ -823,7 +823,7 @@ section { padding: 80px 0; }
         <div class="section-head anim">
             <div class="section-tag" style="background: #333; color: var(--white);">Dzień 2 · Narzędzia AI</div>
             <h2>Narzędzia AI na żywo</h2>
-            <p>Grafika, wideo, mowa, dyktowanie, automatyzacja — 5 narzędzi do pracy.</p>
+            <p>Grafika, wideo, mowa, dyktowanie, automatyzacja — pokażemy na żywo.</p>
         </div>
         <div class="cards-grid cards-grid-full" id="narzedzia-cards">
         </div>
@@ -1617,27 +1617,85 @@ RESPONSE: Email max 150 słów, zakończony propozycją konkretnego terminu.`
 // --- NARZĘDZIA ---
 {
     id: 'narz-higgsfield', section: 'narzedzia', number: '1', color: 'dark',
-    title: 'Higgsfield',
-    desc: 'Grafika i wideo AI. Kilka modeli w jednym miejscu.',
+    title: 'Higgsfield — Grafika AI',
+    desc: 'Wybierz bohatera, tło, styl i ujęcie — AI wygeneruje grafikę.',
     badges: [
-        { text: 'Grafika + Wideo', cls: 'badge-tool' },
-        { text: 'Free 150 kred/mies', cls: 'badge-time' },
+        { text: 'Ćwiczenie grupowe', cls: 'badge-target' },
+        { text: 'higgsfield.ai', cls: 'badge-tool' },
     ],
-    info: `Narzędzie do generowania grafik i wideo z AI.
-Kilka modeli w jednym miejscu — nie musisz skakać między serwisami.
+    info: `Wybierzcie po jednej opcji z każdej kategorii:
 
-CO POTRAFI:
-• Generowanie grafik (plakaty, wizualizacje, social media)
-• Tworzenie krótkich wideo (animacje, clipy produktowe)
-• Kilka modeli do wyboru (różne style)
+BOHATER:
+• Thanos w eleganckim garniturze
+• Luke Skywalker z mieczem świetlnym
+• Geralt z Rivii (Wiedźmin)
+• Gandalf z laską
+• Keanu Reeves w płaszczu z Matrixa
 
-CENA:
-• Darmowy plan: 150 kredytów/miesiąc
-• Płatny: od $9/miesiąc`,
+TŁO:
+• Times Square, Nowy Jork — neony i tłum
+• Neo-Tokyo — deszcz, neony, cyberpunk
+• Podziemia metra — ciemne tunele, graffiti
+• Osaka — dzielnica neonów nocą
+• Islandia — wulkan, lawa, dym
+
+STYL:
+• Hyperrealistic, 8K photography
+• Studio Ghibli, anime watercolor
+• Cyberpunk neon, dark futuristic
+• Comic book, bold lines, vivid colors
+• Oil painting, Renaissance masterpiece
+
+UJĘCIE:
+• Close-up portrait, eye contact
+• Full body, wide cinematic shot
+• Dramatic low angle, hero pose
+• Bird's eye view, looking down
+• Over the shoulder, atmospheric`,
+    content: `[BOHATER] in [TŁO]. [STYL]. [UJĘCIE]. Highly detailed, cinematic composition, dramatic lighting.`,
     link: 'https://higgsfield.ai'
 },
 {
-    id: 'narz-notebooklm', section: 'narzedzia', number: '2', color: 'dark',
+    id: 'narz-higgsfield-video', section: 'narzedzia', number: '2', color: 'dark',
+    title: 'Higgsfield — Wideo AI',
+    desc: 'Weź wygenerowaną grafikę i ożyw ją — wybierz ruch kamery.',
+    badges: [
+        { text: 'Ćwiczenie grupowe', cls: 'badge-target' },
+        { text: 'higgsfield.ai', cls: 'badge-tool' },
+    ],
+    info: `Weź grafikę z poprzedniego kroku i zamień w wideo.
+Wybierz jeden z promptów ruchu:
+
+1. ZOOM IN
+   Kamera powoli zbliża się do bohatera.
+   Dramatyczny wiatr powiewa płaszczem/włosami.
+
+2. ORBITA 360°
+   Kamera okrąża bohatera dookoła. Płynny, kinowy ruch.
+
+3. SPACER
+   Bohater idzie w stronę kamery. Tło się rozmywa.
+
+4. DESZCZ W SLOW MOTION
+   Krople deszczu spadają w zwolnionym tempie.
+   Bohater patrzy w niebo.
+
+5. TIMELAPSE
+   Tło przyspieszone (chmury/ruch uliczny).
+   Bohater stoi nieruchomo.`,
+    content: `PROMPT 1: Slow cinematic zoom in. Dramatic wind blowing cape and hair. Atmospheric fog.
+
+PROMPT 2: Camera smoothly orbits 360 degrees around the character. Cinematic motion.
+
+PROMPT 3: Character walks confidently toward the camera. Background gradually blurs.
+
+PROMPT 4: Slow motion rain falling. Character slowly looks up at the sky. Reflections on wet ground.
+
+PROMPT 5: Timelapse clouds and city lights in background. Character stands perfectly still. Day to night transition.`,
+    link: 'https://higgsfield.ai'
+},
+{
+    id: 'narz-notebooklm', section: 'narzedzia', number: '3', color: 'dark',
     title: 'NotebookLM',
     desc: 'Baza wiedzy od Google. Wrzuć dokumenty — AI odpowiada na ich podstawie.',
     badges: [
@@ -1661,7 +1719,7 @@ CENA:
     link: 'https://notebooklm.google.com'
 },
 {
-    id: 'narz-elevenlabs', section: 'narzedzia', number: '3', color: 'dark',
+    id: 'narz-elevenlabs', section: 'narzedzia', number: '4', color: 'dark',
     title: 'ElevenLabs',
     desc: 'Synteza mowy AI. Naturalny głos po polsku. Klonowanie głosu.',
     badges: [
@@ -1680,15 +1738,19 @@ CO POTRAFI:
 CENA:
 • Darmowe: 10 min audio/miesiąc
 • Starter: od $5/miesiąc`,
+    content: `Zanim cokolwiek wpiszecie w AI, zadajcie sobie trzy pytania.
+Co AI ma zrobić? Po co to robicie? Jak ma wyglądać wynik?
+Trzydzieści sekund myślenia — i zamiast generyka,
+dostajecie dokładnie to, czego potrzebujecie.`,
     link: 'https://elevenlabs.io'
 },
 {
-    id: 'narz-superwhisper', section: 'narzedzia', number: '4', color: 'dark',
+    id: 'narz-superwhisper', section: 'narzedzia', number: '5', color: 'dark',
     title: 'Superwhisper',
     desc: 'Dyktowanie offline. Mów — tekst pojawia się w dowolnej aplikacji.',
     badges: [
-        { text: 'Dyktowanie', cls: 'badge-tool' },
-        { text: 'macOS / iOS', cls: 'badge-target' },
+        { text: 'Dyktowanie offline', cls: 'badge-tool' },
+        { text: 'macOS / Windows / iOS', cls: 'badge-target' },
     ],
     info: `Dyktowanie głosowe offline. Mówisz do mikrofonu — tekst
 pojawia się w dowolnej aplikacji (email, Word, czat).
@@ -1699,15 +1761,19 @@ CO POTRAFI:
 • Idealne do poufnych notatek i dokumentów
 • Działa w tle z dowolną aplikacją
 
-UWAGA: Tylko macOS i iOS (brak Windows).
+DOSTĘPNOŚĆ: macOS, Windows (nowe!), iOS
 
 CENA:
 • Darmowy plan z małymi modelami
-• Pro: $8,49/miesiąc`,
+• Pro: $8,49/miesiąc | Lifetime: $249
+
+ALTERNATYWA:
+• Wispr Flow (wisprflow.ai) — $144/rok
+  Uwaga: wysyła dane do chmury (nie offline)`,
     link: 'https://superwhisper.com'
 },
 {
-    id: 'narz-n8n', section: 'narzedzia', number: '5', color: 'dark',
+    id: 'narz-n8n', section: 'narzedzia', number: '6', color: 'dark',
     title: 'n8n',
     desc: 'Automatyzacja bez kodowania. Łącz aplikacje w workflow.',
     badges: [
