@@ -290,6 +290,11 @@ section { padding: 80px 0; }
     transform: translate(2px, 2px);
     box-shadow: none;
 }
+.sec-role {
+    background: var(--white);
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
 .sec-bonus {
     background: var(--lime);
     border-top: var(--border);
@@ -684,6 +689,7 @@ section { padding: 80px 0; }
             <a href="#dzien2" class="nav-link" data-section="dzien2">Dzień 2</a>
             <a href="#ape" class="nav-link" data-section="ape">Prompty</a>
             <a href="#narzedzia" class="nav-link" data-section="narzedzia">Narzędzia</a>
+            <a href="#role" class="nav-link" data-section="role">Role</a>
             <a href="#bonus" class="nav-link" data-section="bonus">Bonus</a>
         </nav>
     </div>
@@ -826,6 +832,21 @@ section { padding: 80px 0; }
             <p>Grafika, wideo, mowa, dyktowanie, automatyzacja — pokażemy na żywo.</p>
         </div>
         <div class="cards-grid cards-grid-full" id="narzedzia-cards">
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: AI W TWOJEJ ROLI
+     ======================================== -->
+<section id="role" class="sec-role">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--green); color: var(--white);">Dzień 2 · AI w Twojej roli</div>
+            <h2>Gotowe prompty do Twojej pracy</h2>
+            <p>Znajdź swoją rolę. Skopiuj prompt. Przetestuj na prawdziwym zadaniu.</p>
+        </div>
+        <div class="cards-grid cards-grid-full" id="role-cards">
         </div>
     </div>
 </section>
@@ -1789,6 +1810,199 @@ CENA:
     link: 'https://n8n.io'
 },
 --- koniec ukrytego n8n */
+// --- ROLE ---
+{
+    id: 'role-handlowiec', section: 'role', number: '1', color: 'green',
+    title: 'Handlowiec',
+    desc: '3 prompty do codziennej pracy handlowca — oferta, follow-up, obiekcje.',
+    badges: [
+        { text: 'Sprzedaż B2B', cls: 'badge-tool' },
+        { text: '3 prompty APE', cls: 'badge-target' },
+    ],
+    info: `Skopiuj cały blok lub wybierz jeden prompt.
+Zamień [TEKST W NAWIASACH] na swoje dane.
+
+1. EMAIL Z OFERTĄ — odpowiedź na zapytanie klienta
+2. FOLLOW-UP PO SPOTKANIU — podsumowanie ustaleń
+3. ODPOWIEDŹ NA OBIEKCJĘ — rozwianie wątpliwości`,
+    content: `PROMPT 1: EMAIL Z OFERTĄ
+
+ACTION: Napisz email z ofertą do klienta B2B, który pytał o [PRODUKT/USŁUGA].
+PURPOSE: Zainteresować klienta i umówić spotkanie lub rozmowę.
+EXPECTATION: Max 200 słów. Profesjonalny ton. Konkretna propozycja następnego kroku (termin spotkania).
+
+---
+
+PROMPT 2: FOLLOW-UP PO SPOTKANIU
+
+ACTION: Napisz email follow-up po spotkaniu z klientem [NAZWA KLIENTA]. Ustalenia: [WKLEJ NOTATKI].
+PURPOSE: Podsumować ustalenia i potwierdzić następne kroki.
+EXPECTATION: Max 150 słów. Ustalenia jako bullet points. Zakończony konkretnym terminem następnego kontaktu.
+
+---
+
+PROMPT 3: ODPOWIEDŹ NA OBIEKCJĘ
+
+ACTION: Napisz odpowiedź na obiekcję klienta: "[TREŚĆ OBIEKCJI]".
+PURPOSE: Rozwiać wątpliwości i utrzymać proces sprzedaży.
+EXPECTATION: Max 150 słów. Empatyczny ton. Fakty i dane zamiast obietnic. Konkretna propozycja rozwiązania.`
+},
+{
+    id: 'role-biuro', section: 'role', number: '2', color: 'blue',
+    title: 'Biuro / Administracja',
+    desc: '3 prompty do pracy biurowej — spotkania, maile, organizacja.',
+    badges: [
+        { text: 'Biuro', cls: 'badge-tool' },
+        { text: '3 prompty APE', cls: 'badge-target' },
+    ],
+    info: `Skopiuj cały blok lub wybierz jeden prompt.
+Zamień [TEKST W NAWIASACH] na swoje dane.
+
+1. PODSUMOWANIE SPOTKANIA — notatki → zadania z terminami
+2. PROFESJONALNY EMAIL — szybka, rzeczowa wiadomość
+3. ORGANIZACJA ZADAŃ — priorytety na tydzień`,
+    content: `PROMPT 1: PODSUMOWANIE SPOTKANIA
+
+ACTION: Na podstawie moich notatek ze spotkania, stwórz uporządkowane podsumowanie.
+PURPOSE: Żeby wszyscy uczestnicy wiedzieli co ustalono i kto co robi.
+EXPECTATION: Format: 1) Kluczowe ustalenia (bullet points) 2) Zadania: kto + co + termin 3) Data następnego spotkania.
+
+Moje notatki:
+[WKLEJ NOTATKI ZE SPOTKANIA]
+
+---
+
+PROMPT 2: PROFESJONALNY EMAIL
+
+ACTION: Napisz email do [ODBIORCA] w sprawie [TEMAT].
+PURPOSE: [CEL — np. potwierdzić termin, poprosić o dokument, przekazać informację].
+EXPECTATION: Max 100 słów. Uprzejmy, rzeczowy ton. Jasna prośba lub informacja. Jedno konkretne CTA.
+
+---
+
+PROMPT 3: ORGANIZACJA ZADAŃ
+
+ACTION: Uporządkuj moje zadania na ten tydzień i zaproponuj priorytety.
+PURPOSE: Żebym wiedział/a od czego zacząć i nic nie umknęło.
+EXPECTATION: Tabela: zadanie | priorytet (wysoki/średni/niski) | deadline. Posortowane od najpilniejszego.
+
+Moje zadania:
+[WKLEJ LISTĘ ZADAŃ]`
+},
+{
+    id: 'role-marketing', section: 'role', number: '3', color: 'pink',
+    title: 'Marketing / PR',
+    desc: '3 prompty do komunikacji — social media, opisy, mailing.',
+    badges: [
+        { text: 'Marketing', cls: 'badge-tool' },
+        { text: '3 prompty APE', cls: 'badge-target' },
+    ],
+    info: `Skopiuj cały blok lub wybierz jeden prompt.
+Zamień [TEKST W NAWIASACH] na swoje dane.
+
+1. POST NA SOCIAL MEDIA — angażujący post z CTA
+2. OPIS PRODUKTU/USŁUGI — tekst na stronę www
+3. NEWSLETTER — email marketingowy do bazy`,
+    content: `PROMPT 1: POST NA SOCIAL MEDIA
+
+ACTION: Napisz post na [Facebook/LinkedIn/Instagram] o [TEMAT].
+PURPOSE: [CEL — np. zwiększyć świadomość marki, poinformować o usłudze, zaangażować odbiorców].
+EXPECTATION: Max 100 słów. Ton: [profesjonalny/swobodny/inspirujący]. Zakończony CTA. Zaproponuj 3 hashtagi.
+
+---
+
+PROMPT 2: OPIS PRODUKTU/USŁUGI NA STRONĘ
+
+ACTION: Napisz opis [PRODUKT/USŁUGA] na stronę www firmy.
+PURPOSE: Przekonać potencjalnego klienta do kontaktu lub zakupu.
+EXPECTATION: 150-200 słów. Struktura: problem klienta → nasze rozwiązanie → konkretne korzyści → CTA. Bez pustych frazesów — fakty i liczby.
+
+---
+
+PROMPT 3: NEWSLETTER / MAILING
+
+ACTION: Napisz email marketingowy o [TEMAT] do bazy klientów.
+PURPOSE: [CEL — np. poinformować o promocji, nowej usłudze, wydarzeniu].
+EXPECTATION: Temat maila (max 50 znaków, wzbudzający ciekawość) + treść max 150 słów. Jeden jasny CTA. Personalny, ciepły ton.`
+},
+{
+    id: 'role-hr', section: 'role', number: '4', color: 'yellow',
+    title: 'HR',
+    desc: '3 prompty do rekrutacji i wdrożeń — ogłoszenie, kandydat, onboarding.',
+    badges: [
+        { text: 'Kadry', cls: 'badge-tool' },
+        { text: '3 prompty APE', cls: 'badge-target' },
+    ],
+    info: `Skopiuj cały blok lub wybierz jeden prompt.
+Zamień [TEKST W NAWIASACH] na swoje dane.
+
+1. OGŁOSZENIE O PRACĘ — konkretne, bez korporacyjnej nowomowy
+2. EMAIL DO KANDYDATA — profesjonalna komunikacja
+3. PLAN ONBOARDINGU — wdrożenie nowego pracownika`,
+    content: `PROMPT 1: OGŁOSZENIE O PRACĘ
+
+ACTION: Napisz ogłoszenie o pracę na stanowisko [STANOWISKO] w firmie [BRANŻA, WIELKOŚĆ].
+PURPOSE: Przyciągnąć odpowiednich kandydatów i odsiać nieodpowiednich.
+EXPECTATION: Struktura: o firmie (2 zdania) → obowiązki (5-7 punktów) → wymagania (must-have vs nice-to-have) → co oferujemy (5-7 punktów). Konkretne, bez korporacyjnej nowomowy.
+
+---
+
+PROMPT 2: EMAIL DO KANDYDATA
+
+ACTION: Napisz email do kandydata [IMIĘ] — [zaproszenie na rozmowę / odmowa / prośba o dodatkowe info].
+PURPOSE: Profesjonalna komunikacja budująca wizerunek pracodawcy.
+EXPECTATION: Max 100 słów. Ciepły, profesjonalny ton. Konkretne informacje (data, godzina, lokalizacja lub powód odmowy z szacunkiem).
+
+---
+
+PROMPT 3: PLAN ONBOARDINGU
+
+ACTION: Stwórz plan wdrożenia nowego pracownika na stanowisku [STANOWISKO].
+PURPOSE: Żeby nowa osoba była produktywna jak najszybciej i czuła się zaopiekowana.
+EXPECTATION: Tabela: tydzień 1 (dzień po dniu), tydzień 2-4 (tygodniowo). Kolumny: co, kto odpowiada, checklist do odhaczenia.`
+},
+{
+    id: 'role-kierownik', section: 'role', number: '5', color: 'dark',
+    title: 'Kierownik',
+    desc: '3 prompty do zarządzania — raport, feedback, plan projektu.',
+    badges: [
+        { text: 'Zarządzanie', cls: 'badge-tool' },
+        { text: '3 prompty APE', cls: 'badge-target' },
+    ],
+    info: `Skopiuj cały blok lub wybierz jeden prompt.
+Zamień [TEKST W NAWIASACH] na swoje dane.
+
+1. RAPORT DLA ZARZĄDU — zwięzły, z rekomendacjami
+2. FEEDBACK DLA PRACOWNIKA — konstruktywny, oparty na faktach
+3. PLAN PROJEKTU — kto, co, kiedy`,
+    content: `PROMPT 1: RAPORT DLA ZARZĄDU
+
+ACTION: Na podstawie danych, napisz raport podsumowujący [TEMAT — np. wyniki miesiąca, status projektu, KPI działu].
+PURPOSE: Żeby zarząd szybko zrozumiał sytuację i mógł podjąć decyzję.
+EXPECTATION: Max 1 strona. Struktura: kluczowe liczby → co poszło dobrze → problemy → rekomendacje. Bullet points, nie akapity.
+
+Dane:
+[WKLEJ DANE]
+
+---
+
+PROMPT 2: FEEDBACK DLA PRACOWNIKA
+
+ACTION: Napisz konstruktywny feedback dla [IMIĘ] dotyczący [TEMAT — np. jakość pracy, terminowość, współpraca].
+PURPOSE: [Zmotywować / docenić / skorygować zachowanie].
+EXPECTATION: Format SBI: Sytuacja (kiedy, gdzie) → Zachowanie (co zrobił/a) → Wpływ (jaki efekt). Max 100 słów. Konkretny, oparty na faktach, nie oceniający osoby.
+
+---
+
+PROMPT 3: PLAN PROJEKTU
+
+ACTION: Stwórz wstępny plan projektu [NAZWA PROJEKTU].
+PURPOSE: Żeby zespół wiedział co, kto, kiedy — i mógł ruszyć z realizacją.
+EXPECTATION: Tabela: etap | zadania | osoba odpowiedzialna | termin | status. Uwzględnij kamienie milowe i potencjalne ryzyka.
+
+Opis projektu:
+[WKLEJ OPIS]`
+},
 // --- BONUS ---
 {
     id: 'bonus-1', section: 'bonus', number: 'B1', color: 'lime',
@@ -1928,6 +2142,7 @@ const sections = {
     'dzien2': 'dzien2-cards',
     'ape': 'ape-cards',
     'narzedzia': 'narzedzia-cards',
+    'role': 'role-cards',
     'bonus': 'bonus-cards',
 };
 
