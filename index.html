@@ -295,6 +295,9 @@ section { padding: 80px 0; }
     border-top: var(--border);
     border-bottom: var(--border);
 }
+.sec-agent {
+    background: var(--bg);
+}
 .sec-bonus {
     background: var(--lime);
     border-top: var(--border);
@@ -690,6 +693,7 @@ section { padding: 80px 0; }
             <a href="#ape" class="nav-link" data-section="ape">Prompty</a>
             <a href="#narzedzia" class="nav-link" data-section="narzedzia">Narzędzia</a>
             <a href="#role" class="nav-link" data-section="role">Role</a>
+            <a href="#agent" class="nav-link" data-section="agent">Agent</a>
             <a href="#bonus" class="nav-link" data-section="bonus">Bonus</a>
         </nav>
     </div>
@@ -847,6 +851,21 @@ section { padding: 80px 0; }
             <p>Znajdź swoją rolę. Skopiuj prompt. Przetestuj na prawdziwym zadaniu.</p>
         </div>
         <div class="cards-grid cards-grid-full" id="role-cards">
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION: MINI-AGENT
+     ======================================== -->
+<section id="agent" class="sec-agent">
+    <div class="container">
+        <div class="section-head anim">
+            <div class="section-tag" style="background: var(--orange); color: var(--white);">Dzień 2 · Mini-agent na co dzień</div>
+            <h2>Zbuduj własnego agenta AI</h2>
+            <p>Agent = instrukcja + pliki. Raz budujesz, codziennie używasz.</p>
+        </div>
+        <div class="cards-grid cards-grid-full" id="agent-cards">
         </div>
     </div>
 </section>
@@ -2003,6 +2022,201 @@ EXPECTATION: Tabela: etap | zadania | osoba odpowiedzialna | termin | status. Uw
 Opis projektu:
 [WKLEJ OPIS]`
 },
+// --- AGENT ---
+{
+    id: 'agent-framework', section: 'agent', number: 'A', color: 'blue',
+    title: 'Jak napisać dobrą instrukcję',
+    desc: '7 elementów skutecznej instrukcji dla AI. Zacznij od 3-4, resztę dodaj później.',
+    badges: [
+        { text: 'Framework', cls: 'badge-tool' },
+        { text: '100-300 słów', cls: 'badge-time' },
+    ],
+    info: `Dobra instrukcja ma 7 elementów.
+Nie musisz używać wszystkich — zacznij od 3-4.
+
+1. ROLA — Kim jest AI?
+   "Jesteś doświadczonym handlowcem firmy X."
+
+2. CEL — Po co istnieje?
+   "Pomagasz pisać oferty i emaile do klientów B2B."
+
+3. KONTEKST — Co powinien wiedzieć?
+   "Firma sprzedaje pojemniki na elektroodpady.
+   Klienci to firmy produkcyjne i urzędy."
+
+4. ZASADY — Co ZAWSZE, czego NIGDY?
+   "Zawsze kończ propozycją następnego kroku.
+   Nigdy nie wymyślaj cen — pytaj mnie."
+
+5. PROCES — Co robić krok po kroku?
+   "Gdy powiem 'nowa oferta': 1) Zapytaj o klienta
+   2) Napisz draft  3) Zaproponuj temat maila"
+
+6. FORMAT — Jak ma wyglądać wynik?
+   "Email max 200 słów. Ton profesjonalny.
+   Bullet points, nie akapity."
+
+7. PRZYKŁAD — Pokaż, nie opisuj.
+   Wklej jeden przykład dobrego wyniku.
+
+ZŁOTA ZASADA:
+Jeśli potrafisz wyjaśnić nowemu pracownikowi
+co ma robić pierwszego dnia — potrafisz napisać
+instrukcję dla AI.
+
+CZĘSTE BŁĘDY:
+• Za ogólnikowo ("bądź profesjonalny" = nic nie znaczy)
+• Brak zasad NIGDY (AI nie wie czego unikać)
+• Za dużo tekstu (>500 słów = AI gubi się)
+• Brak przykładu (1 przykład > 3 akapity opisu)`
+},
+{
+    id: 'agent-example', section: 'agent', number: 'B', color: 'green',
+    title: 'Przykład: Asystent Ofert',
+    desc: 'Gotowa instrukcja do wklejenia do Gemini Gems lub ChatGPT. 7 sekcji, ~200 słów.',
+    badges: [
+        { text: 'Gemini Gems / ChatGPT', cls: 'badge-tool' },
+        { text: 'Gotowe do wklejenia', cls: 'badge-target' },
+    ],
+    info: `Przykładowy agent dla handlowca Terra Recycling.
+Skopiuj i wklej do Gems (Gemini) lub Projektu (ChatGPT).
+Po wklejeniu dodaj pliki: cennik, ofertę, folder handlowy.`,
+    content: `## ROLA
+Jesteś Asystentem Ofert firmy Terra Recycling — pomagasz handlowcowi w codziennej komunikacji z klientami B2B.
+
+## CEL
+Pisanie ofert, emaili i odpowiedzi na zapytania klientów. Utrzymanie profesjonalnego, ale ciepłego tonu.
+
+## KONTEKST
+- Firma: Terra Recycling (Grodzisk Mazowiecki)
+- Branża: recykling sprzętu elektrycznego i elektronicznego
+- Klienci: firmy produkcyjne, urzędy, instytucje
+- Dane o produktach/cenach masz w załączonych plikach
+
+## ZASADY
+ZAWSZE:
+- Kończ propozycją konkretnego następnego kroku (termin spotkania, telefon)
+- Używaj danych z załączonych plików (cennik, oferta)
+- Pisz po polsku, zwracaj się per Pan/Pani
+
+NIGDY:
+- Nie wymyślaj cen ani danych technicznych — powiedz "sprawdzę i wrócę z informacją"
+- Nie obiecuj terminów dostaw bez potwierdzenia
+- Nie używaj pustych frazesów ("innowacyjne rozwiązania", "kompleksowa obsługa")
+
+## PROCES
+Gdy powiem "nowy email" lub "nowa oferta":
+1. Zapytaj: do kogo piszemy i w jakiej sprawie
+2. Napisz draft emaila/oferty
+3. Zaproponuj temat wiadomości (max 50 znaków)
+
+## FORMAT
+- Email: max 200 słów
+- Oferta: max 1 strona
+- Ton: profesjonalny, ciepły, konkretny
+- Struktura: bullet points, krótkie zdania
+
+## PRZYKŁAD DOBREGO EMAILA
+Szanowna Pani Kowalska,
+
+Dziękuję za zapytanie o pojemniki na elektroodpady.
+Na podstawie Państwa potrzeb proponuję:
+• Pojemnik PE-240 (elektroodpady mieszane) — 3 szt.
+• Odbiór co 2 tygodnie, certyfikowany transport
+
+Szczegółowy cennik załączam. Chętnie omówię ofertę na spotkaniu — czy czwartek 13.02 o 10:00 byłby dogodny?
+
+Z poważaniem,
+[Twoje imię]`
+},
+{
+    id: 'agent-template', section: 'agent', number: 'C', color: 'yellow',
+    title: 'Szablon — Zbuduj Własnego',
+    desc: 'Wypełnij [POLA] i masz gotową instrukcję. Inspiracje per rola poniżej.',
+    badges: [
+        { text: 'Szablon', cls: 'badge-tool' },
+        { text: 'Twoja kolej', cls: 'badge-target' },
+    ],
+    info: `Pomyśl: jakie zadanie powtarzasz najczęściej?
+
+INSPIRACJE PER ROLA:
+• Handlowiec → Asystent Ofert (oferty, emaile, follow-upy)
+• Biuro → Asystent Spotkań (agendy, podsumowania, zadania)
+• Marketing → Asystent Social Media (posty, opisy, newslettery)
+• HR → Asystent Rekrutacji (ogłoszenia, komunikacja, onboarding)
+• Kierownik → Asystent Raportów (raporty, plany, feedback)
+
+Wypełnij szablon poniżej. Wklej do Gems lub ChatGPT.
+Dodaj pliki (cennik, regulamin, procedury).`,
+    content: `## ROLA
+Jesteś [NAZWA AGENTA — np. Asystent Spotkań].
+Pracujesz w firmie [BRANŻA, WIELKOŚĆ]. Pomagasz [KOMU].
+
+## CEL
+[CO AGENT MA ROBIĆ — np. pisać podsumowania spotkań, tworzyć ogłoszenia o pracę, przygotowywać raporty]
+
+## KONTEKST
+- Firma: [NAZWA, BRANŻA]
+- Moi odbiorcy: [KTO CZYTA WYNIKI — np. zarząd, klienci, pracownicy]
+- Dodatkowe info: [CO AGENT POWINIEN WIEDZIEĆ]
+
+## ZASADY
+ZAWSZE:
+- [ZASADA 1 — np. pytaj o szczegóły zanim zaczniesz]
+- [ZASADA 2 — np. używaj danych z załączonych plików]
+- [ZASADA 3 — np. pisz po polsku]
+
+NIGDY:
+- [ZAKAZ 1 — np. nie wymyślaj danych/liczb]
+- [ZAKAZ 2 — np. nie używaj korporacyjnego żargonu]
+
+## PROCES
+Gdy powiem "[TRIGGER — np. nowe spotkanie / nowy raport]":
+1. Zapytaj mnie o: [JAKIE INFO POTRZEBUJE]
+2. [KROK 2]
+3. [KROK 3]
+
+## FORMAT
+- Długość: [MAX SŁÓW/STRON]
+- Ton: [PROFESJONALNY / SWOBODNY / FORMALNY]
+- Struktura: [BULLET POINTS / TABELA / AKAPITY]
+
+## PRZYKŁAD
+[WKLEJ PRZYKŁAD DOBREGO WYNIKU — np. email, raport, post]`
+},
+{
+    id: 'agent-howto', section: 'agent', number: 'D', color: 'dark',
+    title: 'Jak Zbudować Agenta',
+    desc: 'Dwie ścieżki: Gemini Gems (darmowe) lub ChatGPT Projekty. Krok po kroku.',
+    badges: [
+        { text: 'Gemini Gems', cls: 'badge-tool' },
+        { text: 'ChatGPT Projekty', cls: 'badge-tool' },
+    ],
+    info: `ŚCIEŻKA 1: GEMINI → GEMS (darmowe)
+
+1. Otwórz gemini.google.com
+2. Menu po lewej → Gems → Nowy Gem
+3. Wklej instrukcję (z karty B lub C)
+4. Kliknij ikonę różdżki — AI poprawi Twoją instrukcję
+5. Dodaj pliki (cennik, regulamin, procedury) — max 10
+6. Przetestuj w panelu podglądu
+7. Zapisz — Gem pojawia się w Twoim menu
+
+ŚCIEŻKA 2: CHATGPT → PROJEKTY ($20/mies)
+
+1. Otwórz chatgpt.com
+2. Menu po lewej → + → Nowy Projekt
+3. Kliknij ikonę ołówka → "Instrukcje"
+4. Wklej instrukcję (z karty B lub C)
+5. Dodaj pliki do projektu
+6. Każda rozmowa w tym projekcie zna Twoje instrukcje i pliki
+7. Możesz mieć wiele projektów (Oferty, Rekrutacja, Raporty)
+
+CO WYBRAĆ?
+• Gemini Gems — darmowe, prostsze, szybki start
+• ChatGPT Projekty — płatne, więcej opcji, lepsze do złożonych zadań`,
+    link: 'https://gemini.google.com'
+},
 // --- BONUS ---
 {
     id: 'bonus-1', section: 'bonus', number: 'B1', color: 'lime',
@@ -2143,6 +2357,7 @@ const sections = {
     'ape': 'ape-cards',
     'narzedzia': 'narzedzia-cards',
     'role': 'role-cards',
+    'agent': 'agent-cards',
     'bonus': 'bonus-cards',
 };
 
