@@ -244,15 +244,16 @@ section { padding: 80px 0; }
     border-bottom: var(--border);
 }
 .card-info {
-    margin: 12px 20px 0;
-    padding: 16px;
+    margin: 12px 16px 16px;
+    padding: 16px 18px;
     background: var(--bg);
-    border: 2px solid var(--black);
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 .info-text {
     font-family: var(--font-mono);
-    font-size: 0.78rem;
-    line-height: 1.55;
+    font-size: 0.82rem;
+    line-height: 1.6;
     color: var(--text);
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -689,12 +690,12 @@ section { padding: 80px 0; }
             <a href="#kontekst" class="nav-link" data-section="kontekst">Kontekst</a>
             <a href="#pipeline" class="nav-link" data-section="pipeline">Weryfikacja</a>
             <a href="#asystent" class="nav-link" data-section="asystent">Asystent</a>
-            <a href="#dzien2" class="nav-link" data-section="dzien2">Dzień 2</a>
+            <a href="#bonus" class="nav-link" data-section="bonus">Bonus</a>
             <a href="#ape" class="nav-link" data-section="ape">Prompty</a>
             <a href="#narzedzia" class="nav-link" data-section="narzedzia">Narzędzia</a>
             <a href="#role" class="nav-link" data-section="role">Role</a>
             <a href="#agent" class="nav-link" data-section="agent">Agent</a>
-            <a href="#bonus" class="nav-link" data-section="bonus">Bonus</a>
+            <a href="#dzien2" class="nav-link" data-section="dzien2">Kryzys</a>
         </nav>
     </div>
 </header>
@@ -796,16 +797,16 @@ section { padding: 80px 0; }
 </section>
 
 <!-- ========================================
-     SECTION: DZIEŃ 2 (W5-W7)
+     SECTION: BONUS (koniec Dnia 1)
      ======================================== -->
-<section id="dzien2" class="sec-dzien2">
+<section id="bonus" class="sec-bonus">
     <div class="container">
         <div class="section-head anim">
-            <div class="section-tag" style="background: var(--white); color: var(--black);">Dzień 2 · Warsztaty #5-#7</div>
-            <h2>Dzień 2 — Kryzys i Symulacja</h2>
-            <p>Gazeta pisze o Twojej firmie. Ćwiczysz reakcję — z AI jako wsparciem.</p>
+            <div class="section-tag" style="background: var(--black); color: var(--lime);">Dzień 1 · Zadanie dodatkowe</div>
+            <h2>Wzbogacenie plików</h2>
+            <p>Masz wynik Deep Research? Wklej do Asystenta — niech Twoje pliki urosną.</p>
         </div>
-        <div class="cards-grid" id="dzien2-cards">
+        <div class="cards-grid" id="bonus-cards">
         </div>
     </div>
 </section>
@@ -871,16 +872,16 @@ section { padding: 80px 0; }
 </section>
 
 <!-- ========================================
-     SECTION: BONUS
+     SECTION: SYMULACJA KRYZYSOWA
      ======================================== -->
-<section id="bonus" class="sec-bonus">
+<section id="dzien2" class="sec-dzien2">
     <div class="container">
         <div class="section-head anim">
-            <div class="section-tag" style="background: var(--black); color: var(--lime);">Bonus Tracks</div>
-            <h2>Dodatkowe zadania</h2>
-            <p>Masz Asystenta? Wybierz jedno z zadań i przetestuj go na własnych materiałach.</p>
+            <div class="section-tag" style="background: var(--pink); color: var(--white);">Dzień 2 · Symulacja kryzysowa</div>
+            <h2>Kryzys — co robisz?</h2>
+            <p>Fundacja publikuje raport o Twojej firmie. Piszesz reakcję — sam, z AI, pod presją.</p>
         </div>
-        <div class="cards-grid" id="bonus-cards">
+        <div class="cards-grid" id="dzien2-cards">
         </div>
     </div>
 </section>
@@ -1344,90 +1345,149 @@ Co mogę dla Ciebie zrobić?
 },
 // --- DZIEŃ 2 ---
 {
-    id: 'dr-kryzys', section: 'dzien2', number: '09', color: 'pink',
-    title: 'Checklista Kryzysowa',
-    desc: 'Zlecasz AI deep research — wraca z checklistą: co robić w pierwszych 60 minutach kryzysu.',
+    id: 'checklista-kryzys', section: 'dzien2', number: '09a', color: 'lime',
+    title: 'Checklista: Pierwsze 60 Minut',
+    desc: 'Kryzys wybuchł. Co robisz NAJPIERW? Przeczytaj zanim zaczniesz pisać.',
     badges: [
-        { text: 'ChatGPT DR', cls: 'badge-tool' },
+        { text: 'Przeczytaj', cls: 'badge-target' },
     ],
-    content: `Przeprowadź głęboki research na temat zarządzania kryzysowego w firmach z branży recyklingowej / gospodarki odpadami w Polsce i UE.
+    info: `PIERWSZE 60 MINUT — CHECKLISTA
 
-KONTEKST:
-Firma: Terra Recycling (Grodzisk Mazowiecki)
-Branża: Recykling sprzętu elektrycznego i elektronicznego (WEEE)
-Skala: Krajowa, kilkadziesiąt osób, klienci B2B
-Certyfikaty: ISO 14001, norma EN 50625
-Kluczowe ryzyka: zarzuty o greenwashing, zawyżanie wskaźników, mylące certyfikaty, nieścisłości w komunikacji ekologicznej
+□ Zwołaj sztab kryzysowy
+  (szef, kierownik jakości, prawnik, komunikacja)
 
-PYTANIA BADAWCZE:
+□ Wstrzymaj WSZYSTKIE posty i kampanie
+  (żadnego radosnego marketingu obok kryzysu)
 
-1. REALNE KRYZYSY W BRANŻY:
-   - Jakie kryzysy wizerunkowe związane z greenwashingiem dotknęły firmy recyklingowe/środowiskowe w Polsce i UE w ostatnich 5 latach?
-   - Co dokładnie się stało? Jak firmy zareagowały? Co zadziałało, co nie?
-   - Podaj konkretne nazwy firm i daty (jeśli dostępne)
+□ Zweryfikuj źródło i treść zarzutu
+  (kto napisał? co dokładnie? jakie dane podają?)
 
-2. CHECKLISTA KRYZYSOWA:
-   Stwórz szczegółową checklistę działań kryzysowych dla firmy recyklingowej na wypadek zarzutów o greenwashing:
-   a) PIERWSZE 60 MINUT — co robić natychmiast
-   b) PIERWSZE 24 GODZINY — następne kroki
-   c) PIERWSZY TYDZIEŃ — działania naprawcze
-   d) PO KRYZYSIE — wnioski i prewencja
+□ Sprawdź własne dowody
+  (raporty z testów, audyty, certyfikaty — mamy?)
 
-3. KOMUNIKACJA KRYZYSOWA:
-   - Jakie szablony komunikatów stosują firmy z branży?
-   - Jak brzmi dobry komunikat kryzysowy vs zły?
-   - Jakie kanały komunikacji priorytetyzować?
+□ Wyślij holding statement:
+  "Jesteśmy świadomi pytań dotyczących [temat].
+   Analizujemy dane wewnętrzne.
+   Wrócimy z pełną informacją w ciągu [X] godzin."
 
-4. REGULACJE:
-   - Jakie konsekwencje prawne grożą za greenwashing w Polsce/UE (2025-2026)?
-   - Green Claims Directive — co zmienia w kontekście kryzysów?
+UWAGA: Holding statement to NIE jest odpowiedź.
+To kupowanie czasu. Odpowiedź piszesz w kolejnym kroku.`
+},
+{
+    id: 'kontekst-regulacje', section: 'dzien2', number: '09b', color: 'lime',
+    title: 'Kary za Greenwashing (2026)',
+    desc: 'Dyrektywa EmpCo wchodzi 27.03.2026 — za 6 tygodni. To nie teoria.',
+    badges: [
+        { text: 'Kontekst', cls: 'badge-target' },
+    ],
+    info: `NOWE PRAWO — od 27 marca 2026
 
-5. PREWENCJA:
-   - Jakie procedury wewnętrzne minimalizują ryzyko kryzysu?
-   - Jak firmy recyklingowe prowadzą "self-audit" komunikacji?
+Dyrektywa EmpCo (2024/825) zakazuje:
+• Ogólnych haseł ("eko", "zielony") bez dowodów
+• Etykiet bez certyfikacji przez stronę trzecią
+• Oświadczeń o "neutralności" opartych na offsetingu
 
-FORMAT: Konkretne, z datami i nazwami. Case studies. Checklisty z checkboxami. Źródła przy każdym fakcie.`
+KARY:
+• UOKiK: do 10% rocznego obrotu
+• GIOŚ: do 1 mln zł (kary administracyjne)
+• Sąd: pozwy NGO (jak ClientEarth vs Nestlé 2025)
+• Wykluczenie z przetargów publicznych na 12 mies.
+
+REALNE PRZYPADKI (2025-2026):
+• Nestlé Poland — pozew za "100% z recyklingu"
+  (ClientEarth, wrzesień 2025)
+• Bolt — kara za "bezemisyjność" dotyczącą
+  ułamka floty (UOKiK, styczeń 2026)
+• Tchibo — etykiety "eko" przy 10% recyklatu
+  (UOKiK, styczeń 2026)
+
+Szacowane wpływy z kar za greenwashing
+w Polsce w 2026: ponad 50 mln zł.`
+},
+{
+    id: 'dobry-zly-komunikat', section: 'dzien2', number: '09c', color: 'lime',
+    title: 'Dobry vs Zły Komunikat',
+    desc: 'Ściąga: jak pisać w kryzysie, a jak NIE pisać. Miej otwarte podczas symulacji.',
+    badges: [
+        { text: 'Ściąga', cls: 'badge-target' },
+    ],
+    info: `ŹLE (ryzykownie):
+"Recyklingujemy niemal wszystko, co do nas trafia."
+
+DOBRZE (bezpiecznie):
+"Wskaźnik recyklingu materiałowego: 82,4%
+ dla kat. 4 WEEE (audyt EN 50625, XII.2025)."
+
+———
+
+ŹLE: "To atak na polskiego przedsiębiorcę."
+
+DOBRZE: "Zidentyfikowaliśmy rozbieżność
+w raportowaniu frakcji tworzyw
+i wdrożyliśmy poprawkę w systemie wagowym."
+
+———
+
+ŹLE: "Posiadamy liczne certyfikaty
+potwierdzające naszą ekologiczność."
+
+DOBRZE: "Procesy audytowane corocznie
+wg normy EN 50625. Ostatni audyt: [data]."
+
+———
+
+ŹLE: "Będziemy liderem zielonej transformacji."
+
+DOBRZE: "Publikujemy pełny raport ścieżki
+materiałowej dla każdego klienta B2B
+do końca 2026 r."`
 },
 {
     id: 'symulacja-scenariusz', section: 'dzien2', number: '10a', color: 'pink',
     title: 'Scenariusz Kryzysowy',
-    desc: 'Poniedziałek, 8:30 rano. Gazeta opublikowała artykuł o Twojej firmie. Co robisz?',
+    desc: 'Poniedziałek, 8:30 rano. Fundacja środowiskowa opublikowała raport. Co robisz?',
     badges: [
         { text: 'Projektor', cls: 'badge-tool' },
     ],
-    content: `SYMULACJA KRYZYSOWA
+    info: `SYMULACJA KRYZYSOWA
 
 Jest poniedziałek, 8:30 rano.
 
-Lokalna gazeta "Kurier Grodziski" opublikowała artykuł:
+Fundacja EkoWatch opublikowała raport:
+"Greenwashing w branży WEEE — analiza 12 firm"
 
-"TERRA RECYCLING ZAWYŻA WSKAŹNIKI RECYCLINGU O 15%?
- Anonimowy informator twierdzi, że firma podaje
- wskaźnik odzysku 94%, podczas gdy realna wartość
- wynosi poniżej 80%."
+Terra Recycling jest wymieniona:
+"Firma deklaruje wskaźnik odzysku 94%.
+ Jednak wartość ta obejmuje wyłącznie frakcje
+ metalowe. Tworzywa z bromowanymi
+ uniepalniaczami i szkło kineskopowe
+ — nie są uwzględniane w bilansie.
+ Realny wskaźnik dla CAŁOŚCI wsadu:
+ szacujemy na 71-76%."
 
-Artykuł został udostępniony 47 razy na Facebooku.
-Lokalny radny skomentował: "Będziemy się temu przyglądać."
-Telefon dzwoni — klient B2B pyta "czy to prawda?"`
+Portal Komunalny podchwycił temat:
+"Czy polskie firmy recyklingowe zawyżają
+ wskaźniki? Raport EkoWatch stawia pytania."
+Artykuł udostępniony 200+ razy na LinkedIn.
+
+Twój największy klient B2B (producent AGD)
+przesyła maila: "Potrzebujemy wyjaśnień
+przed audytem ESG w przyszłym tygodniu."`
 },
 {
     id: 'karta-a', section: 'dzien2', number: '10b', color: 'pink',
     title: 'Karta A: Handlowiec',
-    desc: 'Napisz email do klientów B2B. Uprzedź pytania, daj fakty, utrzymaj zaufanie.',
+    desc: 'Klient B2B ma audyt ESG za tydzień i żąda wyjaśnień. Napisz email.',
     badges: [
-        { text: 'Asystent [7]', cls: 'badge-tool' },
+        { text: 'Asystent', cls: 'badge-tool' },
         { text: 'Email B2B', cls: 'badge-target' },
     ],
-    content: `TWOJE ZADANIE:
+    info: `BRIEF — HANDLOWIEC
 
 Napisz email do 3 największych klientów B2B firmy.
+Uprzedź pytania. Daj fakty. Utrzymaj zaufanie.
 
-Cel: Uprzedzić pytania. Dać fakty. Utrzymać zaufanie.
-
-Użyj Asystenta [7] KRYZYS. Wklej scenariusz i poproś o pomoc.
-
-CZAS: 30 min
-FORMAT: Email (max 200 słów)
+FORMAT: Email, max 200 słów
 ODBIORCA: Klienci B2B (decydenci zakupowi)
 
 MUSI ZAWIERAĆ:
@@ -1437,28 +1497,34 @@ MUSI ZAWIERAĆ:
 - Konkretny następny krok
 
 NIE MOŻE ZAWIERAĆ:
-- Ataku na gazetę/informatora
+- Ataku na portal/informatora
 - Obietnic bez pokrycia
-- Legalese / korporacyjnej mowy`
+- Legalese / korporacyjnej mowy
+
+—————————————
+
+JAK TO ZROBIĆ:
+1. Otwórz Asystenta (Gem z Dnia 1)
+2. Napisz prompt w APE:
+   A = Co AI ma zrobić? (opisz sytuację + zadanie)
+   P = Po co? (jaki cel chcesz osiągnąć)
+   E = Jak ma wyglądać? (format, ton, długość)
+3. Wyślij → przeczytaj → popraw jeśli trzeba`
 },
 {
     id: 'karta-b', section: 'dzien2', number: '10c', color: 'pink',
     title: 'Karta B: PR / Marketing',
-    desc: 'Napisz komunikat prasowy. Stanowisko firmy, fakty, konkretne kroki.',
+    desc: 'Napisz komunikat prasowy w odpowiedzi na raport EkoWatch.',
     badges: [
-        { text: 'Asystent [7]', cls: 'badge-tool' },
+        { text: 'Asystent', cls: 'badge-tool' },
         { text: 'Komunikat prasowy', cls: 'badge-target' },
     ],
-    content: `TWOJE ZADANIE:
+    info: `BRIEF — PR / MARKETING
 
 Napisz oficjalny komunikat prasowy firmy Terra Recycling.
+Przedstaw stanowisko firmy. Daj fakty. Nie eskaluj.
 
-Cel: Przedstawić stanowisko firmy. Dać fakty. Nie eskalować.
-
-Użyj Asystenta [7] KRYZYS. Wklej scenariusz i poproś o pomoc.
-
-CZAS: 30 min
-FORMAT: Komunikat prasowy (max 300 słów)
+FORMAT: Komunikat prasowy, max 300 słów
 ODBIORCA: Media, opinia publiczna
 
 MUSI ZAWIERAĆ:
@@ -1471,85 +1537,82 @@ NIE MOŻE ZAWIERAĆ:
 - "Bez komentarza"
 - Ataku na źródło informacji
 - Pustych frazesów ("przykładamy wagę do...")
-- Obietnic bez konkretów`
+- Obietnic bez konkretów
+
+—————————————
+
+JAK TO ZROBIĆ:
+1. Otwórz Asystenta (Gem z Dnia 1)
+2. Napisz prompt w APE:
+   A = Co AI ma zrobić? (opisz sytuację + zadanie)
+   P = Po co? (jaki cel chcesz osiągnąć)
+   E = Jak ma wyglądać? (format, ton, długość)
+3. Wyślij → przeczytaj → popraw jeśli trzeba`
 },
 {
     id: 'karta-c', section: 'dzien2', number: '10d', color: 'pink',
     title: 'Karta C: Biuro / Inne',
-    desc: 'Napisz post na FB + wiadomość do pracowników. Co mówić, czego nie mówić.',
+    desc: 'Napisz post na LinkedIn + wiadomość do pracowników. Co mówić, czego nie mówić.',
     badges: [
-        { text: 'Asystent [7]', cls: 'badge-tool' },
-        { text: 'FB + email', cls: 'badge-target' },
+        { text: 'Asystent', cls: 'badge-tool' },
+        { text: 'LinkedIn + email', cls: 'badge-target' },
     ],
-    content: `TWOJE ZADANIE:
+    info: `BRIEF — BIURO / INNE
 
 Napisz 2 komunikaty:
-1. Post na Facebooka firmy (odpowiedź na artykuł)
+1. Post na LinkedIn firmy (odpowiedź na raport)
 2. Wiadomość do pracowników (co mówić gdy ktoś pyta)
 
-Użyj Asystenta [7] KRYZYS. Wklej scenariusz i poproś o pomoc.
+FORMAT: Post LinkedIn (max 150 słów) + email wewnętrzny (max 150 słów)
+ODBIORCA: 1) Branża i klienci na LinkedIn  2) Pracownicy
 
-CZAS: 30 min
-FORMAT: Post FB (max 150 słów) + email wewnętrzny (max 150 słów)
-ODBIORCA: 1) Społeczność online  2) Pracownicy
-
-POST FB MUSI ZAWIERAĆ:
-- Krótkie odniesienie do sytuacji
-- 1-2 konkretne fakty
+POST LINKEDIN MUSI ZAWIERAĆ:
+- Krótkie odniesienie do raportu EkoWatch
+- 1-2 konkretne fakty (certyfikaty, audyty)
 - Zaproszenie do dialogu (nie zamknięcie dyskusji)
 
 EMAIL WEWNĘTRZNY MUSI ZAWIERAĆ:
-- Co się stało (fakty)
-- Co firma robi
+- Co się stało (fakty, nie plotki)
+- Co firma robi w odpowiedzi
 - Co pracownicy mają mówić gdy ktoś pyta
 - Czego NIE mówić
 
 NIE MOŻE ZAWIERAĆ:
 - Paniki
-- Ataku na gazetę
-- "Nie rozmawiajcie z nikim"`
+- Ataku na fundację/portal
+- "Nie rozmawiajcie z nikim"
+
+—————————————
+
+JAK TO ZROBIĆ:
+1. Otwórz Asystenta (Gem z Dnia 1)
+2. Napisz prompt w APE:
+   A = Co AI ma zrobić? (opisz sytuację + zadanie)
+   P = Po co? (jaki cel chcesz osiągnąć)
+   E = Jak ma wyglądać? (format, ton, długość)
+3. Wyślij → przeczytaj → popraw jeśli trzeba`
 },
 {
-    id: 'symulacja-prompt', section: 'dzien2', number: '10e', color: 'pink',
-    title: 'Prompt Kryzysowy',
-    desc: 'Wklej scenariusz do Asystenta — poproś o pomoc z komunikatem.',
+    id: 'symulacja-hint', section: 'dzien2', number: '10e', color: 'lime',
+    title: 'Podpowiedź APE',
+    desc: 'Utknąłeś? Tu jest przykład jak zacząć — ale najpierw spróbuj sam!',
     badges: [
-        { text: 'Asystent [7]', cls: 'badge-tool' },
+        { text: 'Pomoc', cls: 'badge-target' },
     ],
-    content: `Scenariusz kryzysowy:
+    info: `Przypomnienie — format APE:
 
-Lokalna gazeta "Kurier Grodziski" opublikowała artykuł:
-"Terra Recycling zawyża wskaźniki recyclingu o 15%?"
-Anonimowy informator twierdzi wskaźnik 94% vs realne poniżej 80%.
-Artykuł udostępniony 47 razy na FB.
-Lokalny radny: "Będziemy się temu przyglądać."
-Klienci B2B dzwonią z pytaniami.
+A = ACTION — Co AI ma zrobić?
+    (opisz sytuację + jakie zadanie)
 
-Moje zadanie: Napisz [TYP KOMUNIKATU z karty] dla [ODBIORCA].
-Użyj danych z moich plików kontekstowych.`
-},
-{
-    id: 'zamkniecie', section: 'dzien2', number: '11', color: 'pink',
-    title: 'Wasza Firma za 2 Lata',
-    desc: 'Jak będzie wyglądać Twoja firma za 2 lata — jeśli wykorzystasz to, co zbudowałeś.',
-    badges: [
-        { text: 'Gemini · Projektor', cls: 'badge-tool' },
-    ],
-    content: `Wyobraź sobie, że minęły 2 lata. Jest luty 2028.
+P = PURPOSE — Po co?
+    (jaki cel chcesz osiągnąć tym tekstem)
 
-Jesteś nowym pracownikiem Terra Recycling. Przyszedłeś do pracy pierwszy dzień. Ktoś Ci pokazuje jak firma komunikuje się ze światem.
+E = EXPECTATION — Jak ma wyglądać wynik?
+    (format, długość, ton, co musi zawierać)
 
-Opisz co WIDZISZ — na podstawie tego, co uczestnicy szkolenia zbudowali dzisiaj i wczoraj:
-- Asystent z 7 opcjami i systemem anty-halucynacyjnym
-- 3 pliki kontekstowe (firma, rola, przekaz) — wzbogacone przez Deep Research
-- Ścieżka weryfikacji greenwashingu (4 kroki)
-- Checklistę kryzysową
-- Komunikaty przetestowane i poprawione przez grupę
-
-Pisz z perspektywy tego nowego pracownika. Co go zaskakuje?
-Co jest inne niż w poprzedniej firmie? Co czuje?
-
-Krótko. 150 słów max. Bez lania wody. Z emocją.`
+Weź informacje ze scenariusza (10a)
+i wytyczne ze swojej karty (10b/10c/10d).
+Złóż to w prompt. Wklej do Asystenta.`
 },
 // --- APE ---
 {
@@ -2210,85 +2273,18 @@ Gdy powiem "[TRIGGER — np. nowe spotkanie / nowy raport]":
 4. Wklej instrukcję (z karty B lub C)
 5. Dodaj pliki do projektu
 6. Każda rozmowa w tym projekcie zna Twoje instrukcje i pliki
-7. Możesz mieć wiele projektów (Oferty, Rekrutacja, Raporty)
-
-CO WYBRAĆ?
-• Gemini Gems — darmowe, prostsze, szybki start
-• ChatGPT Projekty — płatne, więcej opcji, lepsze do złożonych zadań`,
+7. Możesz mieć wiele projektów (Oferty, Rekrutacja, Raporty)`,
     link: 'https://gemini.google.com'
 },
 // --- BONUS ---
 {
-    id: 'bonus-1', section: 'bonus', number: 'B1', color: 'lime',
-    title: 'Weryfikacja Własna',
-    desc: 'Przepuść PRAWDZIWY materiał ze swojej pracy przez Quick Check',
-    badges: [
-        { text: 'Asystent [1]', cls: 'badge-tool' },
-    ],
-    content: `BONUS: WERYFIKACJA WŁASNA
-
-Weź PRAWDZIWY materiał ze swojej codziennej pracy:
-- Ostatni email do klienta
-- Fragment oferty
-- Post który napisałeś/aś
-
-Przepuść go przez Asystenta [1] Quick Check.
-
-Pytanie: Czy w TWOJEJ codziennej komunikacji jest greenwashing?
-
-Jeśli znajdziesz coś żółtego/czerwonego — użyj [3] Rewriter i zrób uczciwą wersję.`
-},
-{
-    id: 'bonus-2', section: 'bonus', number: 'B2', color: 'lime',
-    title: 'Dziennikarskie Pytania',
-    desc: 'AI gra dziennikarza śledczego. 5 pytań, na które trudno odpowiedzieć.',
-    badges: [
-        { text: 'Gemini', cls: 'badge-tool' },
-    ],
-    content: `BONUS: 5 NAJTRUDNIEJSZYCH PYTAŃ
-
-Wklej do Asystenta:
-
-"Wciel się w dziennikarza śledczego który pisze artykuł o greenwashingu w branży recyklingowej. Zadaj mi 5 najtrudniejszych pytań o ekologiczność mojej firmy — takich, na które trudno odpowiedzieć."
-
-Potem spróbuj na nie odpowiedzieć — z pomocą Asystenta.
-
-Na które pytania NIE UMIESZ odpowiedzieć?
-→ To są Twoje tematy do Deep Research.`
-},
-{
-    id: 'bonus-3', section: 'bonus', number: 'B3', color: 'lime',
-    title: 'Porównanie Narzędzi',
-    desc: 'Ten sam claim w Gemini, ChatGPT i DeepSeek — co daje kontekst?',
-    badges: [
-        { text: 'Multi-tool', cls: 'badge-tool' },
-    ],
-    content: `BONUS: TEST PORÓWNAWCZY
-
-Weź 1 claim z weryfikacji (np. "100% materiałów trafia do recyclingu").
-
-Wklej TEN SAM prompt do 3 narzędzi:
-- Gemini (w Gemie — z kontekstem)
-- ChatGPT (bez kontekstu — czysty czat)
-- DeepSeek (bez kontekstu)
-
-Porównaj odpowiedzi:
-1. Która jest najlepsza? Dlaczego?
-2. Czym się różnią?
-3. Co daje KONTEKST? (Asystent vs czysty czat)
-
-Zapiszcie 3 wnioski.`
-},
-{
-    id: 'bonus-4', section: 'bonus', number: 'B4', color: 'lime',
+    id: 'bonus-4', section: 'bonus', number: 'B', color: 'lime',
     title: 'Wzbogacenie Plików',
     desc: 'Asystent proponuje co dodać do Twoich plików po Deep Research. Akceptujesz lub odrzucasz.',
     badges: [
         { text: 'Gemini', cls: 'badge-tool' },
     ],
-    content: `BONUS: WZBOGACENIE PLIKÓW
-
-Masz wynik Deep Research. Wkleiłeś go do Asystenta.
+    content: `Masz wynik Deep Research. Wkleiłeś go do Asystenta.
 
 Teraz poproś Asystenta:
 
@@ -2353,12 +2349,12 @@ const sections = {
     'kontekst': 'kontekst-cards',
     'pipeline': 'pipeline-cards',
     'asystent': 'asystent-cards',
-    'dzien2': 'dzien2-cards',
+    'bonus': 'bonus-cards',
     'ape': 'ape-cards',
     'narzedzia': 'narzedzia-cards',
     'role': 'role-cards',
     'agent': 'agent-cards',
-    'bonus': 'bonus-cards',
+    'dzien2': 'dzien2-cards',
 };
 
 Object.entries(sections).forEach(([sec, containerId]) => {
