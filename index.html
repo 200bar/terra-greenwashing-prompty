@@ -894,55 +894,6 @@ section { padding: 80px 0; }
     </div>
 </footer>
 
-<!-- UNICORN EASTER EGG -->
-<div class="unicorn-container">
-    <div class="unicorn-rainbow"></div>
-    <div class="unicorn">🦄</div>
-</div>
-<style>
-.unicorn-container {
-    position: fixed;
-    bottom: 12px;
-    right: 12px;
-    z-index: 50;
-    pointer-events: none;
-}
-.unicorn {
-    font-size: 2rem;
-    animation: unicorn-bounce 1.5s ease-in-out infinite;
-    position: relative;
-    z-index: 2;
-}
-.unicorn-rainbow {
-    position: absolute;
-    bottom: 8px;
-    right: 40px;
-    width: 60px;
-    height: 12px;
-    border-radius: 20px 0 0 20px;
-    background: linear-gradient(
-        180deg,
-        #ff0000 0%, #ff0000 16%,
-        #ff8800 16%, #ff8800 33%,
-        #ffff00 33%, #ffff00 50%,
-        #00cc00 50%, #00cc00 66%,
-        #0066ff 66%, #0066ff 83%,
-        #8800ff 83%, #8800ff 100%
-    );
-    opacity: 0.8;
-    animation: rainbow-trail 1.5s ease-in-out infinite;
-    z-index: 1;
-}
-@keyframes unicorn-bounce {
-    0%, 100% { transform: translateY(0) scaleX(-1); }
-    50% { transform: translateY(-10px) scaleX(-1); }
-}
-@keyframes rainbow-trail {
-    0%, 100% { width: 60px; opacity: 0.8; }
-    50% { width: 80px; opacity: 1; }
-}
-</style>
-
 <!-- TOAST -->
 <div class="toast" id="toast">SKOPIOWANO DO SCHOWKA</div>
 
@@ -1886,34 +1837,6 @@ Co AI ma zrobić? Po co to robicie? Jak ma wyglądać wynik?
 Trzydzieści sekund myślenia — i zamiast generyka,
 dostajecie dokładnie to, czego potrzebujecie.`,
     link: 'https://elevenlabs.io'
-},
-{
-    id: 'narz-superwhisper', section: 'narzedzia', number: '5', color: 'dark',
-    title: 'Superwhisper',
-    desc: 'Dyktowanie offline. Mów — tekst pojawia się w dowolnej aplikacji.',
-    badges: [
-        { text: 'Dyktowanie offline', cls: 'badge-tool' },
-        { text: 'macOS / Windows / iOS', cls: 'badge-target' },
-    ],
-    info: `Dyktowanie głosowe offline. Mówisz do mikrofonu — tekst
-pojawia się w dowolnej aplikacji (email, Word, czat).
-
-CO POTRAFI:
-• Zamiana mowy na tekst w czasie rzeczywistym
-• Działa OFFLINE — nic nie idzie do chmury
-• Idealne do poufnych notatek i dokumentów
-• Działa w tle z dowolną aplikacją
-
-DOSTĘPNOŚĆ: macOS, Windows (nowe!), iOS
-
-CENA:
-• Darmowy plan z małymi modelami
-• Pro: $8,49/miesiąc | Lifetime: $249
-
-ALTERNATYWA:
-• Wispr Flow (wisprflow.ai) — $144/rok
-  Uwaga: wysyła dane do chmury (nie offline)`,
-    link: 'https://superwhisper.com'
 },
 /* --- UKRYTE: n8n — odkomentuj gdy demo będzie gotowe ---
 {
